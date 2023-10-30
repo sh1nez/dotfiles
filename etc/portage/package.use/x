@@ -1,0 +1,7 @@
+x11-libs/cairo X
+dev-cpp/cairomm X
+x11-drivers/nvidia-drivers X
+gui-wm/swayfx X
+media-libs/mesa X
+x11-libs/gtk X
+x11-libs/pango-

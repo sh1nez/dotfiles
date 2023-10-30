@@ -1,0 +1,15 @@
+dev-lang/rust-bin ~amd64
+virtual/rust ~amd64
+dev-lang/rust ~amd64
+sys-kernel/gentoo-sources ~amd64
+sys-devel/gcc ~amd64
+sys-libs/glibc ~amd64
+dev-lang/python ~amd64
+dev-lang/python-exec-conf ~amd64
+sys-apps/portage ~amd64
+sys-devel/clang ~amd64
+dev-util/ccache ~amd64
+media-video/pipewire ~amd64
+media-video/ffmpeg ~amd64
+dev-python/packaging ~amd64
+

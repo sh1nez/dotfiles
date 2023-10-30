@@ -1,0 +1,5 @@
+CC="gcc"
+CXX="g++"
+AR="ar"
+NM="nm"
+RANLIB="ranlib"

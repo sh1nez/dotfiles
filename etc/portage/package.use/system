@@ -1,0 +1,3 @@
+dev-lang/rust nightly
+sys-apps/systemd boot
+sys-devel/binutils -pgo

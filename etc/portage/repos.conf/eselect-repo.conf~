@@ -1,0 +1,19 @@
+# created by eselect-repo
+
+[guru]
+location = /var/db/repos/guru
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/guru.git
+
+
+[steam-overlay]
+location = /var/db/repos/steam-overlay
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/steam-overlay.git
+
+
+
+[mva]
+location = /var/db/repos/mva
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/mva.git

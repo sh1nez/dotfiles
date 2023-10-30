@@ -1,0 +1,11 @@
+net-im/telegram-desktop screencast qt6 qt6-imageformats -X -pulseaudio
+media-libs/tg_owt screencast -X
+
+media-libs/libtgvoip  -pulseaudio
+dev-qt/qtwayland compositor
+media-libs/alsa-lib abi_x86_32
+# tdesktop_patches_chat-ids
+# dev-qt/qt-gui -X
+
+media-video/ffmpeg vpx opus openh264
+sys-libs/zlib minizip

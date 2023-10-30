@@ -1,0 +1,4 @@
+>=net-libs/nodejs-20.7.0::gentoo inspector
+media-fonts/noto cjk
+app-editors/helix -grammar
+app-editors/vscode  --enable-features=UseOzonePlatform --ozone-platform=wayland
