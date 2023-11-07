@@ -1,10 +1,10 @@
 #!/bin/env sh
 target_dir="${HOME}/dotfiles"
 dot_directories="
-        /etc/portage/
+    /etc/portage/
 	/etc/systemd/
 
-        ${HOME}/.config/alacritty/
+    ${HOME}/.config/alacritty/
 	${HOME}/.config/cava/
 	${HOME}/.config/eww/
 	${HOME}/.config/fontconfig/
@@ -19,10 +19,10 @@ dot_directories="
 	${HOME}/.config/systemd/
 	${HOME}/.config/Tunar/
 	${HOME}/.config/xdg-desktop-portal/
-
-        ${HOME}/.themes/
-        ${HOME}/.icons/
-	${HOME}/.mozilla/firefox/owin18hn.default-release/chrome/
+    ${HOME}/.config/gtk-3.0/
+    ${HOME}/.config/nvim/
+    
+    ${HOME}/.icons/
         
 "
 
