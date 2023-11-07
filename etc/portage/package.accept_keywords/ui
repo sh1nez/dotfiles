@@ -1,0 +1,12 @@
+# package.accept_keywords# required by ohmyzsh (argument)
+=app-shells/ohmyzsh-9999 **
+gui-wm/swayfx ~amd64
+gui-apps/rofi-wayland ~amd64
+net-im/telegram-desktop-bin ~amd64
+media-fonts/jetbrainsmono-nerdfont ~amd6
+app-shells/zsh-autosuggestions ~amd64
+media-libs/svt-vp9 ~amd64
+gui-apps/wev ~amd64
+app-arch/7zip ~amd64
+gui-apps/wf-recorder ~amd64
+

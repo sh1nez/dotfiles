@@ -1,9 +1,0 @@
-connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 20480 (20K) [application/x-tar]
-Saving to: ‘/var/cache/binpkgs/app-alternatives/cpio/cpio-0-2.gpkg.tar.partial’
-
-     0K .......... ..........                                 100% 83.8K=0.2s
-
-2023-10-13 05:09:03 (83.8 KB/s) - ‘/var/cache/binpkgs/app-alternatives/cpio/cpio-0-2.gpkg.tar.partial’ saved [20480/20480]
-
