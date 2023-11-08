@@ -581,7 +581,7 @@ sys-fs/udev-init-scripts-35
 sys-fs/udisks-2.9.4-r3
 sys-kernel/dracut-059-r4
 sys-kernel/gentoo-kernel-bin-6.1.57
-sys-kernel/installkernel-gentoo-7
+sys-kernel/installkernel-systemd-boot-2-r3
 sys-kernel/linux-firmware-20231030
 sys-kernel/linux-headers-6.1
 sys-libs/binutils-libs-2.40-r5
