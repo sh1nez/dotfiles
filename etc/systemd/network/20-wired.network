@@ -3,4 +3,5 @@ Name=enp3s0
 
 [Network]
 DHCP=yes
+DNS=1.1.1.1 8.8.8.8
 IPv6AcceptRA=no
