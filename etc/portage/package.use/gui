@@ -1,4 +1,6 @@
 gui-wm/swayfx wallpapers -swaybar -tray
 gui-apps/swaybg gdk-pixbuf
 dev-libs/libdbusmenu gtk3
-gui-apps/rofi-wayland drun 
+media-libs/libcanberra alsa
+gui-apps/rofi-wayland drun
+# virtual/rust -abi

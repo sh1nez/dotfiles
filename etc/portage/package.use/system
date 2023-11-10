@@ -1,3 +1,8 @@
 dev-lang/rust nightly
 sys-apps/systemd boot
 sys-devel/binutils -pgo
+sys-devel/gcc -lto -pgo
+media-libs/mesa vdpau vaapi 
+#zink
+#x11-drivers/nvidia-drivers dist-kernel
+
