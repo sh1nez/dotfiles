@@ -25,6 +25,7 @@ require("lazy").setup({
 {'nvim-treesitter/nvim-treesitter'},
 {'neovim/nvim-lspconfig'},
 {'joshdick/onedark.vim'},
+{'olimorris/onedarkpro.nvim'},
 
 {'neovim/nvim-lspconfig'},
 {'hrsh7th/cmp-nvim-lsp'},
@@ -36,7 +37,11 @@ require("lazy").setup({
 	branch = '0.1.x',
       	dependencies = { 'nvim-lua/plenary.nvim' }
 },
-	
+{'terrortylor/nvim-comment'},
+{'mfussenegger/nvim-dap'},
+-- {'Vigemus/iron.nvim'},
+--{'thinca/vim-quickrun'},
+{'jpalardy/vim-slime'},
 })
 -- require("nvim-tree").setup()
 -- vim.opt.termguicolors = true
