@@ -35,8 +35,8 @@ scrollback-end=Control+Shift+comma
 scrollback-home=Control+Shift+i
 
 [colors]
-alpha=1
-background=000000
+alpha=0.9
+background=181818
 #242424
 # foreground=ffffff
 # flash=7f7f00
