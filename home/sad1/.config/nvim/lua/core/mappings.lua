@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 
+
 vim.keymap.set('n', '<leader>t', ':Neotree float focus<CR>')
 vim.keymap.set('n', '<leader>g', ':Neotree float git_status<CR>')
 
@@ -12,6 +13,10 @@ vim.keymap.set('n', '[', ':vertical resize +1<CR>')
 vim.keymap.set('n', '[', ':vertical resize -1<CR>')
 vim.keymap.set('n', '}', ':resize +1<CR>')
 vim.keymap.set('n', '{', ':resize +1<CR>')
+vim.keymap.set('n', '<leader>ww', ':w !doas tee %<CR>')
+
+-- Настройка биндов
+vim.api.nvim_set_keymap('t', '<Space>q', '<C-\\><C-n>', { noremap = true, silent = true })
 
 -- Установка отступов
 vim.opt.tabstop = 4        -- Ширина табуляции в 5 пробелов
@@ -23,3 +28,4 @@ vim.opt.autoindent = true  -- Включить автоматическое фо
 -- vim.opt('smartindent', true) -- Включить умное форматирование
 -- vim.opt('smarttab', true)    -- Использовать умные табуляции
 -- vim.opy('cindent', true)     -- Включить С-подобное форматирование
+

@@ -39,10 +39,10 @@ require("lazy").setup({
 },
 {'terrortylor/nvim-comment'},
 {'mfussenegger/nvim-dap'},
--- {'Vigemus/iron.nvim'},
---{'thinca/vim-quickrun'},
-{'jpalardy/vim-slime'},
-})
--- require("nvim-tree").setup()
--- vim.opt.termguicolors = true
+-- {'erietz/vim-terminator'},
+{'voldikss/vim-floaterm'},
+-- {'thinca/vim-quickrun'},
+-- {'jpalardy/vim-slime'},
 
+})
+-- vim.opt.termguicolors = true

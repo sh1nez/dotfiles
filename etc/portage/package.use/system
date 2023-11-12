@@ -1,5 +1,6 @@
 dev-lang/rust nightly
-sys-apps/systemd boot
+sys-apps/systemd boot -dns-over-tls kernel-install
+sys-apps/systemd-utils kernel-install
 sys-devel/binutils -pgo
 sys-devel/gcc -lto -pgo
 media-libs/mesa vdpau vaapi 

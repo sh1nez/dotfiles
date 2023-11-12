@@ -14,4 +14,5 @@ require("plugins.cmp")
 require("plugins.telescope")
 
 require("plugins.comment")
-require("plugins.slime")
+require("plugins.floaterm")
+
