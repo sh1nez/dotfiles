@@ -1,6 +1,6 @@
 # Это дефолтный конфиг для sway/swayfx
 # В системе лежит в: ~/.config/sway/config
-
+exec_always export WLR_NO_HARDWARE_CURSORS=1
 #--- КЛАВИША МОДИФИКАТОР --------------------------------------------------------------
 	set $mod Mod4
 
@@ -12,7 +12,7 @@
 	set $up k
 	set $right l
 
-	set $term alacritty
+	set $term foot
 	set $menu rofi -modes "drun" -show
 #--- ЭТО РАБОТАЕТ ТОЛЬКО В SWAYFX -----------------------------------------------------
 	# Скругления
@@ -33,9 +33,9 @@
 ##2b4f6f
 
 	# Затемнение неактивных окон
-	default_dim_inactive 0.0
-	dim_inactive_colors.unfocused #000000FF
-	dim_inactive_colors.urgent #900000FF
+	default_dim_inactive 0.15
+	#dim_inactive_colors.unfocused #000000FF
+	#dim_inactive_colors.urgent #900000FF
 
 
 
@@ -50,14 +50,13 @@
 	smart_gaps on
 
 	# Толщина рамок для обычных и плавающих окон
-	default_border pixel 1
+	default_border pixel none
 	default_floating_border none
-#	default_border color white
-#	border.color
-	
-	# Размер рамок окон
-	for_window [tiling] border pixel none
+
+
+	for_window [tiling] border pixel none 
 	for_window [floating] border none
+#	client.focused          #b58900 #b58900 #fdf6e3 #cb4b16
 
 	# Отключение рамки если открыто одно окно
 	smart_borders off
@@ -128,7 +127,7 @@
     bindsym $mod+Return exec $term
     bindsym --to-code $mod+r exec $menu
     bindsym --to-code $mod+t exec Thunar
-    bindsym --to-code $mod+g exec pavucontrol
+    bindsym --to-code $mod+y exec pavucontrol
     # Скриншоты
 	bindsym Print exec grim -g "$(slurp)" - | wl-copy
 	bindsym $mod+Print exec grim -g "$(slurp)" ~/screen-"$(date +%s)".png
@@ -152,10 +151,11 @@
     bindsym --to-code $mod+$up focus up
     bindsym --to-code $mod+$right focus right
     # Переключение фокуса через $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+    bindsym --to-code $mod+Left focus left
+    bindsym --to-code $mod+Down focus down
+    bindsym --to-code $mod+Up focus up
+    bindsym --to-code $mod+Right focus right
+	
 
 
     # Перемещение окна через переменные
@@ -197,7 +197,7 @@
 	workspace 1 output DVI-D-1
 	workspace 2 output DVI-D-1
 	workspace 3 output DVI-D-1
-	workspace 4 output DVI-I-1
+	workspace 4 output DVI-D-1
 	workspace 5 output DVI-I-1
 	workspace 6 output DVI-D-1
 	workspace 7 output DVI-D-1
@@ -209,7 +209,7 @@
     bindsym --to-code $mod+c splith
     bindsym --to-code $mod+v splitv
 
-    # Смена стиля контейнера
+    # Смена стиля конfocusfocus	 parent
 	bindsym --to-code $mod+s layout stacking
 	bindsym --to-code $mod+w layout tabbed
 	bindsym --to-code $mod+e layout toggle split
@@ -218,6 +218,7 @@
     bindsym --to-code $mod+f fullscreen
     bindsym --to-code $mod+z sticky toggle
     bindsym $mod+tab focus next
+	bindsym $mod+space focus mode_toggle
     # Сделать окно плавающим
     bindsym --to-code $mod+d floating toggle
     # Переключение между плавающими и тайловыми окнами
@@ -232,9 +233,7 @@
 
     # Показать по кругу окна свернутую в скрачпад
     bindsym $mod+minus scratchpad show
-
-	# Переход в режим ресайза
-	bindsym --to-code $mod++space+r mode "resize"
+	# Переход в режим ресайз
 
 	# Рейз через переменные
 	mode "resize" {
@@ -257,6 +256,7 @@
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+	bindsym --to-code $mod+g mode "resize"
 
 for_window [app_id="Thunar"] floating enable
 for_window [app_id="pavucontrol"] floating enable

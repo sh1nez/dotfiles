@@ -38,11 +38,11 @@ require("lazy").setup({
       	dependencies = { 'nvim-lua/plenary.nvim' }
 },
 {'terrortylor/nvim-comment'},
-{'mfussenegger/nvim-dap'},
--- {'erietz/vim-terminator'},
 {'voldikss/vim-floaterm'},
--- {'thinca/vim-quickrun'},
--- {'jpalardy/vim-slime'},
+{'mfussenegger/nvim-dap'},
+{'jiangmiao/auto-pairs'},
 
 })
+-- require("nvim-tree").setup()
 -- vim.opt.termguicolors = true
+
