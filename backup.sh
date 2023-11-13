@@ -6,19 +6,16 @@ dot_directories="
 
     ${HOME}/.config/alacritty/
 	${HOME}/.config/cava/
-	${HOME}/.config/eww/
 	${HOME}/.config/fontconfig/
 	${HOME}/.config/foot/
 	${HOME}/.config/htop/	
 	${HOME}/.config/kitty/
 	${HOME}/.config/mako/
 	${HOME}/.config/neofetch/
-	${HOME}/.config/nnn/
 	${HOME}/.config/pavucontrol.ini
 	${HOME}/.config/sway/
 	${HOME}/.config/systemd/
-	${HOME}/.config/Tunar/
-	${HOME}/.config/xdg-desktop-portal/
+	${HOME}/.config/Thunar/
     ${HOME}/.config/gtk-3.0/
     ${HOME}/.config/nvim/
     
