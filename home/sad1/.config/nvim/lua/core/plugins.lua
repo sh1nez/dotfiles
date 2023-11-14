@@ -10,9 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup({
-	-- "nvim-tree/nvim-tree.lua",
 {"nvim-neo-tree/neo-tree.nvim",
     	branch = "v3.x",
 	dependencies = {
@@ -28,21 +26,26 @@ require("lazy").setup({
 {'olimorris/onedarkpro.nvim'},
 
 {'neovim/nvim-lspconfig'},
+{'williamboman/mason-lspconfig.nvim'},
+{"williamboman/mason.nvim"},
+
 {'hrsh7th/cmp-nvim-lsp'},
 {'hrsh7th/cmp-buffer'},
 {'hrsh7th/cmp-path'},
 {'hrsh7th/cmp-cmdline'},
-{'hrsh7th/nvim-cmp'},
-{'nvim-telescope/telescope.nvim', 
-	branch = '0.1.x',
-      	dependencies = { 'nvim-lua/plenary.nvim' }
-},
+{'hrsh7th/nvim-cmp'}, --dependencies = { 'quangnguyen30192/cmp-nvim-ultisnips' } },
+
+{'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' }},
+
 {'terrortylor/nvim-comment'},
 {'voldikss/vim-floaterm'},
 {'mfussenegger/nvim-dap'},
+
 {'jiangmiao/auto-pairs'},
 
+-- {"hrsh7th/vim-vsnip", dependencies = { "hrsh7th/cmp-vsnip", "hrsh7th/vim-vsnip-integ",}},
+{"L3MON4D3/LuaSnip",	version = "v2.*",build = "make install_jsregexp"},
+{'saadparwaiz1/cmp_luasnip'},
+
 })
--- require("nvim-tree").setup()
--- vim.opt.termguicolors = true
 

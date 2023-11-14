@@ -5,5 +5,5 @@
 -- 	vim.cmd.colorscheme(color)
 --
 -- end
--- SetColor()
+--SetColor()
 vim.cmd("colorscheme onedark_dark")

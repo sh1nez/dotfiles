@@ -1,5 +1,5 @@
 #!/bin/env sh
-target_dir="${HOME}/dotfiles"
+target_dir="${HOME}/git/dotfiles"
 dot_directories="
     /etc/portage/
 	/etc/systemd/
@@ -22,8 +22,6 @@ dot_directories="
     ${HOME}/.icons/
         
 "
-
-
 for dir in $dot_directories; do
         if [ ! -d ${target_dir}${dir} ]; then
                 mkdir --parents ${target_dir}${dir}
