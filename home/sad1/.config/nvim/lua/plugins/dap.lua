@@ -1,111 +1,106 @@
-return {
-  {
-    "mfussenegger/nvim-dap",
-    ft = { "python" },
-    keys = {
-      { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle breakpoint" },
-      { "<leader>dc", "<cmd>DapContinue<cr>", desc = "Debug" },
-      { "<leader>dt", "<cmd>DapTerminate<cr>", desc = "Terminate Debug" },
-      { "<leader>do", "<cmd>DapStepOver<cr>", desc = "Terminate Debug" },
-      { "<leader>di", "<cmd>DapStepInto<cr>", desc = "Terminate Debug" },
+local dap = require('dap')
+
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+
+dap.adapters.codelldb = {
+  type = 'server',
+  port = "${port}",
+  executable = {
+    command = '/home/sad1/.local/share/nvim/mason/bin/codelldb',
+    args = {"--port", "${port}"},
+    -- On windows you may have to uncomment this:
+    -- detached = false,
+  }
+}
+
+lua require('dap-python').setup('/home/sad1/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+dap.configurations.python = {
       {
-        "<leader>dd",
-        function()
-          require("dap").clear_breakpoints()
-        end,
-        desc = "Clear breakpoints",
+        type = 'python';
+        request = 'launch';
+        name = "Launch file";
+        program = "${file}";
+        pythonPath = function()
+          return '/usr/bin/python'
+        end;
       },
-    },
-    config = function()
-      -- local set_namespace = vim.api.nvim__set_hl_ns or vim.api.nvim_set_hl_ns
-      -- local namespace = vim.api.nvim_create_namespace("dap-hlng")
-      vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#993939", bg = "#6e3405" })
-      vim.api.nvim_set_hl(0, "DapBreakpointLine", { ctermbg = 0, fg = "#ffffff", bg = "#6e3405" })
-      vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#61afef", bg = "#6e3405" })
-      vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#000000", bg = "#98c379" })
+}
 
-      vim.fn.sign_define(
-        "DapBreakpoint",
-        { text = "⏣", texthl = "DapBreakpointLine", linehl = "DapBreakpointLine", numhl = "DapBreakpointLine" }
-      )
-      vim.fn.sign_define(
-        "DapBreakpointCondition",
-        { text = "ﳁ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
-      )
-      vim.fn.sign_define(
-        "DapBreakpointRejected",
-        { text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
-      )
-      vim.fn.sign_define("DapLogPoint", {
-        text = "",
-        texthl = "DapLogPoint",
-        linehl = "DapLogPoint",
-        numhl = "DapLogPoint",
-      })
-      vim.fn.sign_define(
-        "DapStopped",
-        { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" }
-      )
-    end,
-  },
+dap.configurations.cpp = {
   {
-    "rcarriga/nvim-dap-ui",
-    dependencies = "mfussenegger/nvim-dap",
-    ft = { "python" },
-    config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup({
-        layouts = {
-          {
-            -- Left panel
-            elements = {
-              -- Elements can be strings or table with id and size keys.
-              { id = "scopes", size = 0.5 },
-              { id = "watches", size = 0.2 },
-              { id = "stacks", size = 0.2 },
-              { id = "breakpoints", size = 0.1 },
-            },
-            size = 0.4, -- 40 columns
-            -- size = 80, -- 80 columns
-            position = "left",
-          },
-          -- Bottom panel
-          {
-            elements = {
-              { id = "console", size = 0.8 },
-              { id = "repl", size = 0.2 },
-            },
-            size = 0.25, -- 25% of total lines
-            position = "bottom",
-          },
-        },
-      })
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
-  },
-
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-    config = function(_, opts)
-      -- local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      -- local path = "~/.virtualenvs/debugpy/bin/python"
-      local path = vim.fn.getcwd() .. "/.venv/bin/python"
-
-      require("dap-python").setup(path)
-    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
   },
 }
+
+
+ vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+    vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
+    vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+    vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+    vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+    vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+    vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+    vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+    vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+    vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+      require('dap.ui.widgets').hover()
+    end)
+    vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+      require('dap.ui.widgets').preview()
+    end)
+    vim.keymap.set('n', '<Leader>df', function()
+      local widgets = require('dap.ui.widgets')
+      widgets.centered_float(widgets.frames)
+    end)
+    vim.keymap.set('n', '<Leader>ds', function()
+      local widgets = require('dap.ui.widgets')
+      widgets.centered_float(widgets.scopes)
+    end)
+
+
+-- -- dap.defaults.fallback.external_terminal = {
+-- -- 	command = '/usr/bin/alacritty';
+--     args = {'-e'};
+--   }
+--
+--
+-- --dap.listeners.before['event_terminated']['my-plugin'] = function(session, body)
+--     print('Session terminated', vim.inspect(session), vim.inspect(body))
+--   end
+-- local dap = require('dap')
+-- dap.defaults.fallback.force_external_terminal = true
+-- local widgets = require('dap.ui.widgets')
+--   local my_sidebar = widgets.sidebar(widgets.scopes)
+--   my_sidebar.open()
+-- <
+--
+-- View the current frames in a sidebar:
+--
+-- >lua
+--   local widgets = require('dap.ui.widgets')
+--   local my_sidebar = widgets.sidebar(widgets.frames)
+--   my_sidebar.open()
+-- <
+--
+--
+-- View the current scopes in a centered floating window:
+--
+-- >lua
+--   local widgets = require('dap.ui.widgets')
+--   widgets.centered_float(widgets.scopes)
+-- <
+--
+--
+-- View the value for the expression under the cursor in a floating window:
+--
+-- >lua
+--   require('dap.ui.widgets').hover()
+-- <
+--

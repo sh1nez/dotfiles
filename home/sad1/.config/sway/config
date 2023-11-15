@@ -69,7 +69,10 @@ exec_always export WLR_NO_HARDWARE_CURSORS=1
 
 #--- УКРАШАТЕЛЬСТВА -------------------------------------------------------------------
 	# Обои
-	output * bg ~/.config/sway/wallpapers/dark/nya.jpg fill
+	# output * bg ~/.config/sway/wallpapers/black.jpg fill
+
+	# output * bg #000000FF fill
+
 	output DVI-D-1 pos 0 0 res 1920x1080
 	output DVI-I-1 pos 1920 0 res 1280x1024
 	#1653564216_60-celes-club-p-fon-dlya-gacha-laif-zakat-krasivie-61.jpg  fill 
@@ -77,7 +80,7 @@ exec_always export WLR_NO_HARDWARE_CURSORS=1
 #end.jpg fill
 
 	# Шрифт (по ходу для заголовков)
-#	output * bg #000000 solid_color
+	output * bg #000000 solid_color
 	#font pango:JetBrainsMono 10
 #	font pango:JetBrainsMono Regular 13
 
@@ -199,7 +202,7 @@ exec_always export WLR_NO_HARDWARE_CURSORS=1
 	workspace 3 output DVI-D-1
 	workspace 4 output DVI-D-1
 	workspace 5 output DVI-I-1
-	workspace 6 output DVI-D-1
+	workspace 6 output DVI-I-1
 	workspace 7 output DVI-D-1
 	workspace 8 output DVI-D-1
 	workspace 9 output DVI-D-1

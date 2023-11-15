@@ -40,10 +40,11 @@ require("lazy").setup({
 {'terrortylor/nvim-comment'},
 {'voldikss/vim-floaterm'},
 {'mfussenegger/nvim-dap'},
+{'mfussenegger/nvim-dap-python'},
 
 {'jiangmiao/auto-pairs'},
 
-{"L3MON4D3/LuaSnip",	version = "v2.*",build = "make install_jsregexp"},
+{"L3MON4D3/LuaSnip", version = "v2.*",build = "make install_jsregexp",}, 
 {'saadparwaiz1/cmp_luasnip'},
 
 })
