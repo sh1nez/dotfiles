@@ -5,7 +5,7 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require('lspconfig')
 
--- lspconfig.pyright.setup {}
+lspconfig.pylsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.clangd.setup {}
 -- lspconfig.semenko_lua.setup {}

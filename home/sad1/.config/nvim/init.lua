@@ -12,9 +12,8 @@ require("plugins.treesitter")
 require("plugins.comment")
 require("plugins.lsp")
 require("plugins.cmp")
-require('plugins.dap')
+-- require('plugins.dap')
 require("plugins.telescope")
 
 require("plugins.floaterm")
-
 require("luasnip.loaders.from_snipmate").load({ include = { "c", "cpp", 'python' } })

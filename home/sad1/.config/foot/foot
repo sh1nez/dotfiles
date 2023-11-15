@@ -41,25 +41,42 @@ background=181818
 # foreground=ffffff
 # flash=7f7f00
 # flash-alpha=0.5
-
-## Normal/regular colors (color palette 0-7)
 regular0=181818
-regular1=ac4242
-regular2=90a959
-regular3=f4bf75
-regular4=6a9fb5
-regular5=aa759f
-regular6=75b5aa
-regular7=d8d8d8
+regular1=ffffff
+regular2=ffffff
+regular3=ffffff
+regular4=ffffff
+regular5=ffffff
+regular6=ffffff
+regular7=ffffff
 
+## Bright colors (color palette 8-15)
 bright0=6b6b6b
-bright1=c55555
-bright2=aac474
-bright3=feca88
-bright4=82b8c8
-bright5=c28cb8
-bright6=93d3c3
-bright7=f8f8f8
+bright1=ffffff
+bright2=ffffff
+bright3=ffffff
+bright4=ffffff
+bright5=ffffff
+bright6=ffffff
+bright7=ffffff
+## Normal/regular colors (color palette 0-7)
+#regular0=181818
+#regular1=ac4242
+#regular2=90a959
+#regular3=f4bf75
+#regular4=6a9fb5
+#regular5=aa759f
+#regular6=75b5aa
+#regular7=d8d8d8
+#
+#bright0=6b6b6b
+#bright1=c55555
+#bright2=aac474
+#bright3=feca88
+#bright4=82b8c8
+#bright5=c28cb8
+#bright6=93d3c3
+#bright7=f8f8f8
 
 
 
