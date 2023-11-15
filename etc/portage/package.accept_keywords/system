@@ -1,3 +1,4 @@
 #=x11-drivers/nvidia-drivers-535.43.15 **
 dev-util/sccache ~amd64
-sys-apps/systemd ** 
+sys-apps/systemd ~amd64 
+systemd-utils ~amd64
