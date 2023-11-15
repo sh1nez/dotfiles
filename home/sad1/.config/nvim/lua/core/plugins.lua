@@ -43,7 +43,6 @@ require("lazy").setup({
 
 {'jiangmiao/auto-pairs'},
 
--- {"hrsh7th/vim-vsnip", dependencies = { "hrsh7th/cmp-vsnip", "hrsh7th/vim-vsnip-integ",}},
 {"L3MON4D3/LuaSnip",	version = "v2.*",build = "make install_jsregexp"},
 {'saadparwaiz1/cmp_luasnip'},
 

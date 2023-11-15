@@ -12,17 +12,7 @@ require("plugins.treesitter")
 require("plugins.comment")
 require("plugins.lsp")
 require("plugins.cmp")
-
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
-})
-require("mason-lspconfig").setup()
+require('plugins.dap')
 require("plugins.telescope")
 
 require("plugins.floaterm")

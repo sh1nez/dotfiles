@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-
+vim.keymap.set('i', '<C-q>', '<Esc>')
 vim.keymap.set('n', '<leader>t', ':Neotree float focus<CR>')
 vim.keymap.set('n', '<leader>g', ':Neotree float git_status<CR>')
 
@@ -8,11 +8,20 @@ vim.keymap.set('i', '<C-h>', '<Left>')
 vim.keymap.set('i', '<C-j>', '<Down>')
 vim.keymap.set('i', '<C-k>', '<Up>')
 vim.keymap.set('i', '<C-l>', '<Right>')
+vim.g.AutoPairsMapCh = 0
 
-vim.keymap.set('n', '[', ':vertical resize +1<CR>')
-vim.keymap.set('n', '[', ':vertical resize -1<CR>')
-vim.keymap.set('n', '}', ':resize +1<CR>')
-vim.keymap.set('n', '{', ':resize +1<CR>')
+vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>hh', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>jj', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>kk', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>ll', { noremap = true, silent = true })
+vim.keymap.set('n', '+', ':vsplit<CR>')
+vim.keymap.set('n', '_', ':split<CR>')
+
+
+-- vim.keymap.set('n', '<C-]>', ':vertical resize +1<CR>')
+-- vim.keymap.set('n', '<C-[>', ':vertical resize -1<CR>')
+-- vim.keymap.set('n', '<C-}>', ':resize +1<CR>')
+-- vim.keymap.set('n', '<C-{>', ':resize -1<CR>')
 vim.keymap.set('n', '<leader>ww', ':w !doas tee %<CR>')
 
 
