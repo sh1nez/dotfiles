@@ -17,3 +17,5 @@ require("plugins.telescope")
 
 require("plugins.floaterm")
 require("luasnip.loaders.from_snipmate").load({ include = { "c", "cpp", 'python' } })
+require("nvim-surround").setup()
+

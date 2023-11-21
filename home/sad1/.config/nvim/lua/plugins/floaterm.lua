@@ -19,7 +19,7 @@ local switch_cases = {
     c = function(file)
 		local file_directory = vim.fn.fnamemodify(file, ":h")
         local file_name = vim.fn.expand("%:t:r")
-        execute_command("cd " .. file_directory .. " && clang" .. file .. ' -o ' .. file_name .. ' && "' .. file_directory .. '/' .. file_name .. '"')
+        execute_command("cd " .. file_directory .. " && clang -g " .. file .. ' -o ' .. file_name .. ' && ./' .. file_name)
 
     end,
     py = function(file)
@@ -31,7 +31,20 @@ local switch_cases = {
     sh = function(file)
         execute_command("bash " .. file)
     end,
-    default = function(file)
+	asm = function (file)
+		local file_directory = vim.fn.fnamemodify(file, ":h")
+        local file_name = vim.fn.expand("%:t:r")
+        execute_command("cd " .. file_directory .. " && nasm -f elf64 " .. file .. ' -o ' .. file_name ..  '.o' ..  ' && ' .. 'ld -m elf_x86_64 -o ' .. file_name .. ' ' .. file_name .. '.o' .. ' && ./' .. file_name)
+	end,
+	s = function(file)
+		local file_directory = vim.fn.fnamemodify(file, ":h")
+        local file_name = vim.fn.expand("%:t:r")
+        execute_command("cd " .. file_directory .. " && nasm -f elf64 " .. file .. ' -o ' .. file_name ..  '.o' ..  ' && ' .. 'ld -m elf_x86_64 -o ' .. file_name .. ' ' .. file_name .. '.o' .. ' && ./' .. file_name)
+
+
+    end,
+
+    default = function(_)
         vim.cmd(":w")
         vim.cmd('echo "Unsupported file type: ' .. file_extension .. '"')
     end,
