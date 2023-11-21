@@ -1,0 +1,3 @@
+dev-util/radare2 ~amd64
+app-arch/7zip ~amd64
+dev-util/xxd ~amd64

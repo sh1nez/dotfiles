@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls" },
+	ensure_installed = { "lua_ls", "clangd", "pylsp"},
 })
 
 local lspconfig = require('lspconfig')
@@ -8,8 +8,10 @@ local lspconfig = require('lspconfig')
 lspconfig.pylsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.clangd.setup {}
--- lspconfig.semenko_lua.setup {}
-
+lspconfig.asm_lsp.setup{
+  capabilities = capabilities,
+  root_dir = lspconfig.util.root_pattern('settings.json');
+}
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)

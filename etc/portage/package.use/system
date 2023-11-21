@@ -1,9 +1,7 @@
 dev-lang/rust nightly
-sys-apps/systemd boot -dns-over-tls kernel-install
-sys-apps/systemd-utils kernel-install
+sys-apps/systemd boot -dns-over-tls kernel-install elfutils
+sys-apps/systemd-utils boot kernel-install
 sys-devel/binutils -pgo
 sys-devel/gcc -lto -pgo
 media-libs/mesa vdpau vaapi 
-#zink
-#x11-drivers/nvidia-drivers dist-kernel
-
+sys-firmware/intel-microcode hostonly initramfs

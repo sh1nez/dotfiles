@@ -437,17 +437,14 @@ media-libs/fcft-3.1.2-r1
 media-libs/fontconfig-2.14.2-r3
 media-libs/freeglut-3.4.0
 media-libs/freetype-2.13.2
-media-libs/giflib-5.2.1-r1
 media-libs/glu-9.0.3
 media-libs/harfbuzz-8.2.0
-media-libs/imlib2-1.9.1-r1
 media-libs/jbig2dec-0.19
 media-libs/lcms-2.15
 media-libs/libcanberra-0.30-r7
 media-libs/libepoxy-1.5.10-r2
 media-libs/libexif-0.6.24
 media-libs/libglvnd-1.7.0
-media-libs/libid3tag-0.16.3
 media-libs/libjpeg-turbo-3.0.0
 media-libs/libogg-1.3.5-r1
 media-libs/libpng-1.6.40-r1
@@ -457,7 +454,6 @@ media-libs/libsndfile-1.2.2
 media-libs/libva-2.20.0
 media-libs/libvorbis-1.3.7-r1
 media-libs/libvpx-1.13.1
-media-libs/libwebp-1.3.2
 media-libs/mesa-23.1.8
 media-libs/openh264-2.3.1-r3
 media-libs/openjpeg-2.5.0-r5
@@ -478,7 +474,7 @@ net-dns/libidn-1.41
 net-dns/libidn2-2.3.4-r1
 net-firewall/iptables-1.8.9
 net-fs/sshfs-3.7.3-r1
-net-im/telegram-desktop-bin-4.11.5
+net-im/telegram-desktop-bin-4.11.7
 net-libs/glib-networking-2.76.1
 net-libs/gnutls-3.8.0
 net-libs/libasyncns-0.8-r4
@@ -488,9 +484,8 @@ net-libs/libproxy-0.5.3
 net-libs/libpsl-0.21.2
 net-libs/libslirp-4.7.0
 net-libs/libsoup-3.4.2
-net-libs/libtirpc-1.3.3
+net-libs/libtirpc-1.3.4
 net-libs/nghttp2-1.57.0
-net-libs/nodejs-20.6.1
 net-misc/curl-8.4.0
 net-misc/iputils-20221126-r1
 net-misc/openssh-9.4_p1-r1
@@ -521,6 +516,7 @@ sys-apps/help2man-1.49.3
 sys-apps/hwdata-0.375
 sys-apps/install-xattr-0.8
 sys-apps/iproute2-6.5.0
+sys-apps/iucode_tool-2.3.1-r1
 sys-apps/kbd-2.6.1
 sys-apps/kmod-30-r1
 sys-apps/less-633
@@ -535,7 +531,7 @@ sys-apps/ripgrep-13.0.0
 sys-apps/sandbox-2.38
 sys-apps/sed-4.9
 sys-apps/shadow-4.13-r4
-sys-apps/systemd-254.6
+sys-apps/systemd-254.5-r1
 sys-apps/texinfo-7.0.3
 sys-apps/util-linux-2.38.1-r2
 sys-apps/which-2.21
@@ -561,6 +557,7 @@ sys-devel/clang-toolchain-symlinks-16-r2
 sys-devel/flex-2.6.4-r6
 sys-devel/gcc-13.2.1_p20230826
 sys-devel/gcc-config-2.11
+sys-devel/gdb-13.2-r1
 sys-devel/gettext-0.21.1
 sys-devel/gnuconfig-20230731
 sys-devel/libtool-2.4.7-r1
@@ -572,6 +569,7 @@ sys-devel/m4-1.4.19-r2
 sys-devel/make-4.4.1-r1
 sys-devel/patch-2.7.6-r5
 sys-firmware/edk2-ovmf-bin-202202
+sys-firmware/intel-microcode-20231114_p20231114
 sys-firmware/ipxe-1.21.1
 sys-firmware/seabios-bin-1.16.0
 sys-firmware/sgabios-0.1_pre10
@@ -583,9 +581,8 @@ sys-fs/lvm2-2.03.21-r1
 sys-fs/udev-init-scripts-35
 sys-fs/udisks-2.9.4-r3
 sys-kernel/dracut-059-r5
-sys-kernel/gentoo-kernel-bin-6.1.57
 sys-kernel/gentoo-kernel-bin-6.1.60
-sys-kernel/installkernel-systemd-2-r5
+sys-kernel/installkernel-gentoo-7
 sys-kernel/linux-firmware-20231030
 sys-kernel/linux-headers-6.1
 sys-libs/binutils-libs-2.40-r5
@@ -686,7 +683,7 @@ virtual/ttf-fonts-1-r2
 virtual/udev-217-r7
 virtual/w3m-1
 www-client/firefox-bin-119.0.1
-www-client/google-chrome-119.0.6045.123
+www-client/google-chrome-119.0.6045.159
 www-client/w3m-0.5.3_p20230121
 x11-apps/mesa-progs-8.5.0
 x11-apps/mkfontscale-1.2.2
@@ -734,7 +731,7 @@ x11-libs/libvdpau-1.5
 x11-libs/libwnck-43.0-r1
 x11-libs/libxcb-1.16
 x11-libs/libxcvt-0.1.2
-x11-libs/libxkbcommon-1.5.0
+x11-libs/libxkbcommon-1.6.0
 x11-libs/libxkbfile-1.1.2
 x11-libs/libxshmfence-1.3.2
 x11-libs/pango-1.50.14
@@ -749,7 +746,7 @@ x11-libs/xtrans-1.5.0
 x11-misc/compose-tables-1.8.7
 x11-misc/shared-mime-info-2.2
 x11-misc/xdg-utils-1.1.3_p20210805-r1
-x11-misc/xkeyboard-config-2.39
+x11-misc/xkeyboard-config-2.40
 x11-terms/alacritty-0.12.2
 x11-themes/adwaita-icon-theme-44.0
 x11-themes/gnome-themes-standard-3.28

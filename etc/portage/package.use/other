@@ -1,10 +1,2 @@
 >=net-libs/nodejs-20.7.0::gentoo inspector
 media-fonts/noto cjk
-#app-misc/ranger **
-#№www-client/w3m  fbcon imlib ls nntp gpm 
-#gdk-pixbuf : Enable support for x11-libs/gdk-pixbuf
-#gpm        : Add support for sys-libs/gpm (Console-based mouse driver)
-#l10n_ja    : Japanese
-#lynxkeymap : If you prefer Lynx-like key binding
-#ls        : Add Native Language Support (using gettext - GNU locale utilities)
-#nntp   
