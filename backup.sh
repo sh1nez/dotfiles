@@ -1,9 +1,9 @@
 #!/bin/env sh
 target_dir="${HOME}/git/dotfiles"
+
 dot_directories="
     /etc/portage/
 	/etc/systemd/
-
     ${HOME}/.config/alacritty/
 	${HOME}/.config/cava/
 	${HOME}/.config/fontconfig/
@@ -18,10 +18,12 @@ dot_directories="
 	${HOME}/.config/Thunar/
     ${HOME}/.config/gtk-3.0/
     ${HOME}/.config/nvim/
-    
+	${HOME}/.config/bspwm/
+	${HOME}/.config/sxhkd/
+	${HOME}/.xinitrc
     ${HOME}/.icons/
-        
 "
+
 for dir in $dot_directories; do
         if [ ! -d ${target_dir}${dir} ]; then
                 mkdir --parents ${target_dir}${dir}
