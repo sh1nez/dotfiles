@@ -1,7 +1,0 @@
-#net-im/telegram-desktop ~amd64
-# media-libs/tg_owt ~amd64
-# virtual/rust
-# dev-lang/rust -nightl
->sys-kernel/gentoo-kernel-6.5.7
->sys-kernel/gentoo-kernel-bin-6.5.7
-# >dev-libs/glib-2.76.4

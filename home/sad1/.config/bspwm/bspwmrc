@@ -1,0 +1,32 @@
+#! /bin/sh
+
+setxkbmap -option "grp:caps_toggle" -layout "us,ru" &
+pgrep -x sxhkd > /dev/null || sxhkd &
+bspc monitor DVI-I-0 -d 1 2 3 4 5
+bspc monitor DVI-D-0 -d 6 7 8 9 0
+
+bspc config single_monocle true
+
+bspc config borderless_monocle   true 
+bspc config gapless_monocle      true
+
+bspc config border_width				1
+bspc config window_gap					0
+bspc config top_padding 0
+bspc config right_padding 0
+bspc config bottom_padding 0
+bspc config left_padding 0
+
+
+bspc config split_ratio					0.51
+
+bspc config focus_follows_pointer		true
+bspc config pointer_follows_focus		false
+bspc config pointer_motion_interval		5
+bspc config pointer_modifier			mod4
+bspc config pointer_action1				move
+bspc config pointer_action2				resize_side
+bspc config pointer_action3				resize_corner
+
+bspc rule -a "ru-turikhay-tlauncher-bootstrap-Bootstrap" state=floating
+

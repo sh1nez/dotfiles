@@ -1,5 +1,0 @@
-#www-client/firefox-bin -* amd64
-#sys-apps/xdg-desktop-portal-gtk -* amd64
-sys-apps/xdg-desktop-portal -* amd64
-#gui-libs/xdg-desktop-portal-wlr -* amd64
-# dev-libs/glib -* amd64
