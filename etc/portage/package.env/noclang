@@ -1,2 +1,3 @@
 media-sound/audacity noclang
 games-emulation/dosbox noclang
+media-plugins/caps-plugins noclang 

@@ -8,4 +8,5 @@ app-shells/zsh-autosuggestions ~amd64
 media-libs/svt-vp9 ~amd64
 gui-apps/wev ~amd64
 gui-apps/wf-recorder ~amd64
-
+gui-apps/eww **
+media-video/obs-studio ~amd64
