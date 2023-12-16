@@ -2,21 +2,22 @@ local function execute_command(com)
     vim.cmd(":w")
     vim.cmd(":FloatermNew! "  .. com)
 end
-
+ 
 local switch_cases = {
     cpp = function(file)
     -- vilocal file_directory = vim.fn.expand("%:h")   
 	    local file_directory = vim.fn.fnamemodify(file, ":h")
         local file_name = vim.fn.expand("%:t:r")
-
-        execute_command("cd " .. file_directory .. " && clang++ -g " .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+		local flags = " -Wall -Wextra -fsanitize=undefined -g "
+        execute_command("cd " .. file_directory .. " && g++ " .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
 
     end,
 
     c = function(file)
 		local file_directory = vim.fn.fnamemodify(file, ":h")
         local file_name = vim.fn.expand("%:t:r")
-        execute_command("cd " .. file_directory .. " && clang -g " .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+		local flags = " -Wall -Wextra -fsanitize=undefined -g "
+        execute_command("cd " .. file_directory .. " && gcc" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
 
     end,
     py = function(file)
@@ -36,6 +37,7 @@ local switch_cases = {
 	s = function(file)
 		local file_directory = vim.fn.fnamemodify(file, ":h")
         local file_name = vim.fn.expand("%:t:r")
+
         execute_command("cd " .. file_directory .. " && nasm -f elf64 " .. file .. ' -o ' .. file_name ..  '.o' ..  ' && ' .. 'ld -m elf_x86_64 -o ' .. file_name .. ' ' .. file_name .. '.o' .. ' && time ./' .. file_name)
 
 

@@ -1,0 +1,3 @@
+dev-libs/boehm-gc cxx
+=sys-libs/libxcrypt-4.4.36::gentoo static-libs
+=virtual/libcrypt-2-r1::gentoo static-libs

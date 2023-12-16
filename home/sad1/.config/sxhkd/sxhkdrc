@@ -1,7 +1,9 @@
+Print
+	maim -s | xclip -selection clipboard -t image/png -i $f
+
 super + w
 	bspc node -g hidden=on
-Print
-	scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
+
 super + e
 	bspc query -N -d focused -n .hidden | xargs -I % bspc node % -g hidden=off
 

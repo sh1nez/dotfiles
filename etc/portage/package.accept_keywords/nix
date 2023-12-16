@@ -1,0 +1,8 @@
+sys-apps/nix ~amd64
+
+sys-apps/busybox-nix-sandbox-shell ~amd64
+dev-libs/boost ~amd64
+dev-cpp/rapidcheck ~amd64
+dev-libs/editline ~amd64
+app-text/lowdown-nix ~amd64
+dev-libs/libcpuid ~amd64

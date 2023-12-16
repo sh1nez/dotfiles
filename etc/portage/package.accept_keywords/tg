@@ -1,0 +1,16 @@
+#dev-util/gdbus-codegen ~amd64
+#dev-cpp/glibmm ~amd64
+#media-libs/tg_owt ~amd64
+#dev-libs/gobject-introspection ~amd64
+#media-libs/libyuv ~amd64
+#media-libs/libtgvoip ~amd64
+#dev-libs/glib ~amd64
+net-im/telegram-desktop **
+media-libs/libtgvoip ~amd64
+dev-cpp/glibmm ~amd64
+media-libs/tg_owt ~amd64
+media-libs/libyuv ~amd64
+dev-util/gdbus-codegen ~amd64
+dev-libs/glib ~amd64
+dev-libs/gobject-introspection ~amd64
+dev-libs/gobject-introspection-common ~amd64

@@ -22,13 +22,13 @@ dev-libs/openssl abi_x86_32
 dev-libs/wayland abi_x86_32
 dev-util/pkgconfig abi_x86_32
 dev-util/wayland-scanner abi_x86_32
-gnome-base/librsvg abi_x86_32
+#gnome-base/librsvg abi_x86_32
 media-gfx/graphite2 abi_x86_32
 media-libs/fontconfig abi_x86_32
 media-libs/freetype abi_x86_32
 media-libs/harfbuzz abi_x86_32
 media-libs/libpng abi_x86_32
-media-libs/mesa abi_x86_32
+#media-libs/mesa abi_x86_32
 #media-libs/openal abi_x86_32
 media-libs/tiff abi_x86_32
 net-dns/libidn2 abi_x86_32
@@ -50,11 +50,12 @@ sys-libs/zlib abi_x86_32
 virtual/libffi abi_x86_32
 virtual/libiconv abi_x86_32
 virtual/libudev abi_x86_32
-virtual/opengl abi_x86_32
+#virtual/opengl abi_x86_32
+
 virtual/pkgconfig abi_x86_32
 x11-libs/cairo abi_x86_32
 x11-libs/gdk-pixbuf abi_x86_32
-x11-libs/gtk+:2 abi_x86_32
+#x11-libs/gtk+:2 abi_x86_32
 x11-libs/libX11 abi_x86_32
 x11-libs/libXScrnSaver abi_x86_32
 x11-libs/libXau abi_x86_32
@@ -84,7 +85,8 @@ x11-proto/glproto abi_x86_32
 x11-proto/inputproto abi_x86_32
 x11-proto/kbproto abi_x86_32
 x11-proto/presentproto abi_x86_32
-x11-proto/xcb-proto abi_x86_32
+# move x11-proto/xcb-proto x11-base/xcb-proto
+x11-base/xcb-proto abi_x86_32
 x11-proto/xextproto abi_x86_32
 x11-proto/xf86bigfontproto abi_x86_32
 x11-proto/xf86driproto abi_x86_32
@@ -99,9 +101,7 @@ sys-fs/eudev abi_x86_32
 media-libs/libglvnd abi_x86_32
 x11-drivers/nvidia-drivers abi_x86_32
 
-# test
 games-util/steam-launcher -joystick -udev
-#-udev -elogind
 # games-util/steam-launcher
 sys-libs/ncurses -gpm
 media-libs/vulkan-loader abi_x86_32
@@ -123,8 +123,9 @@ x11-libs/libXtst abi_x86_32
 dev-libs/libpcre2 abi_x86_32
 virtual/libintl abi_x86_32
 sys-libs/libudev-compat abi_x86_32
-virtual/rust abi_x86_32
-dev-lang/rust-bin abi_x86_3
+#X11-libs/gtk+ abi_x86_32
 
-#media-video/pipewire abi_x86_32
-#media-libs/libpulse abi_x86_32
+
+#virtual/rust abi_x86_32
+#dev-lang/rust-bin abi_x86_32
+

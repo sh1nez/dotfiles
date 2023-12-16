@@ -10,6 +10,11 @@ location = /var/db/repos/mva
 sync-type = git
 sync-uri = https://github.com/gentoo-mirror/mva.git
 
+[nix]
+location = /var/db/repos/nix
+sync-type = git
+sync-uri = https://github.com/trofi/nix-guix-gentoo
+
 [nix-guix]
 location = /var/db/repos/nix-guix
 sync-type = git
