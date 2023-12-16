@@ -19,3 +19,11 @@ require("plugins.floaterm")
 require("luasnip.loaders.from_snipmate").load({ include = { "c", "cpp", 'python' } })
 require("nvim-surround").setup()
 
+require("plugins.shiza")
+
+-- require("ibl").setup({scope = { enabled = false;}})
+
+-- Задаем пользовательские клавиатурные отображения для перемещения вверх и вниз
+vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = true, silent = true })
+

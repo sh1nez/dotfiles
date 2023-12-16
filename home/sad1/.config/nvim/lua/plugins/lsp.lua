@@ -9,8 +9,8 @@ lspconfig.pylsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.clangd.setup {}
 lspconfig.asm_lsp.setup{
-  capabilities = capabilities,
-  root_dir = lspconfig.util.root_pattern('settings.json');
+	capabilities = capabilities,
+	root_dir = lspconfig.util.root_pattern('settings.json');
 }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -42,8 +42,52 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>gn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-  --   vim.keymap.set('n', '<space>f', function()
-  --     vim.lsp.buf.format { async = true }
-  --   end, opts)
+    vim.keymap.set('n', '<space>fr', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
    end,
 })
+
+-- vim.g['clang_format#code_style'] = 'llvm'
+-- vim.g['clang_format#auto_format'] = 0
+-- -- vim.g['clang_format#auto_format_on_insert_leave'] = 1
+--
+-- vim.g['clang_format#style_options'] = {
+--     AccessModifierOffset = -4,
+--     AlignConsecutiveMacros = {
+--         Enabled = true,
+--     },
+--     AlignConsecutiveAssignments = {
+--         Enabled = false,
+--     },
+--     AllowAllParametersOfDeclarationOnNextLine = false,
+--     AllowShortEnumsOnASingleLine = false,
+--     AllowShortFunctionsOnASingleLine = 'Inline',
+--     AllowShortIfStatementsOnASingleLine = false,
+--     AllowShortLambdasOnASingleLine = 'Inline',
+--     AlwaysBreakTemplateDeclarations = true,
+--     BinPackArguments = false,
+--     BinPackParameters = false,
+--     BreakBeforeBraces = 'Custom',
+--     BraceWrapping = {
+--         AfterClass = false,
+--         BeforeLambdaBody = true,
+--     },
+--     ConstructorInitializerIndentWidth = 4,
+--     Cpp11BracedListStyle = true,
+--     IndentExternBlock = 'Indent',
+--     IndentPPDirectives = 'None',
+--     IndentRequiresClause = false,
+--     IndentWidth = 4,
+--     LambdaBodyIndentation = 'OuterScope',
+--     NamespaceIndentation = 'All',
+--     PackConstructorInitializers = 'NextLine',
+--     ReflowComments = true,
+--     RequiresClausePosition = 'WithPreceding',
+--     SpaceAfterTemplateKeyword = true,
+--     SpaceBeforeCpp11BracedList = false,
+--     SpaceBeforeCtorInitializerColon = false,
+--     SpaceBeforeInheritanceColon = false,
+--     SpaceBeforeRangeBasedForLoopColon = false,
+-- }
+--

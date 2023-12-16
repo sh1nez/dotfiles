@@ -41,8 +41,10 @@ require("lazy").setup({
 {'voldikss/vim-floaterm'},
 {'mfussenegger/nvim-dap'},
 {'mfussenegger/nvim-dap-python'},
-
+{'eandrju/cellular-automaton.nvim'},
 {'jiangmiao/auto-pairs'},
+
+{"lukas-reineke/indent-blankline.nvim", main="ibl", opts = {scope = { enabled = false}}},
 
 {"L3MON4D3/LuaSnip", version = "v2.*",build = "make install_jsregexp",},
 {'saadparwaiz1/cmp_luasnip'},
