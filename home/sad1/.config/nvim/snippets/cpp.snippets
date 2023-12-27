@@ -1,10 +1,6 @@
 snippet sss "start"
 	#include <iostream>
 
-	#pragma GCC optimize("O3")
-	
-	using namespace std;
-
 	int main() {
     	freopen("input.txt", "r", stdin);
 		${0}
@@ -35,13 +31,10 @@ snippet test "test system"
 	int main() {
 		printf("%i\n\n", solution());
 
-		/* printf("%b\n", solution() == );	 */
-		/* printf("%b\n", solution() == );	 */
-		/* printf("%b\n", solution() == );	 */
-		/* printf("%b\n", solution() == );	 */
-		/* printf("%b\n", solution() == );	 */
+		/* printf("%b\n", solution() == ); */
 		return 0;
 	}
+
 snippet fori "for"
 	for (int i = 0; i < ${0}; ++i){
 

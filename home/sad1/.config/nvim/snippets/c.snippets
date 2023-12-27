@@ -1,12 +1,18 @@
 snippet sss "start"
 	#include <stdio.h>
 
-	#pragma GCC optimize("O3")
-
 	int main() {
 		${0}
 	    return 0;
 	}
+
+snippet fori "for"
+	for (int i = 0; i < ${0}; ++i){
+
+	}
+
+snippet input "freopen(input/x.txx)"
+	freopen("input/${0}.txt", "r", stdin);
 
 snippet test "test system"
 	#include <stdio.h>
@@ -38,8 +44,4 @@ snippet test "test system"
 		printf("%b\n", solution() == );	
 		printf("%b\n", solution() == );	
 		return 0;
-	}
-snippet fori "for"
-	for (int i = 0; i < &{0}; ++i){
-
 	}

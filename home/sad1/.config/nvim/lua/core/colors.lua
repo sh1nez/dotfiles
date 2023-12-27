@@ -6,4 +6,6 @@
 --
 -- end
 --SetColor()
-vim.cmd("colorscheme onedark_dark")
+-- vim.cmd("colorscheme onedark_dark")
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])

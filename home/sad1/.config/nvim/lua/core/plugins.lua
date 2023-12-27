@@ -21,6 +21,7 @@ require("lazy").setup({
     	},
 },
 {'nvim-treesitter/nvim-treesitter'},
+{"ellisonleao/gruvbox.nvim"},
 {'neovim/nvim-lspconfig'},
 {'joshdick/onedark.vim'},
 {'olimorris/onedarkpro.nvim'},
@@ -44,7 +45,7 @@ require("lazy").setup({
 {'eandrju/cellular-automaton.nvim'},
 {'jiangmiao/auto-pairs'},
 
-{"lukas-reineke/indent-blankline.nvim", main="ibl", opts = {scope = { enabled = false}}},
+{'lukas-reineke/indent-blankline.nvim', main="ibl", opts = {scope = { enabled = false}}},
 
 {"L3MON4D3/LuaSnip", version = "v2.*",build = "make install_jsregexp",},
 {'saadparwaiz1/cmp_luasnip'},

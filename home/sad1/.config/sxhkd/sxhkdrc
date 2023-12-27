@@ -1,5 +1,8 @@
 Print
-	maim -s | xclip -selection clipboard -t image/png -i $f
+	flameshot gui
+
+super + Print
+	sleep 1; flameshot gui
 
 super + w
 	bspc node -g hidden=on
