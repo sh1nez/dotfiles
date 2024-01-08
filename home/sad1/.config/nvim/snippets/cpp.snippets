@@ -2,7 +2,6 @@ snippet sss "start"
 	#include <iostream>
 
 	int main() {
-    	freopen("input.txt", "r", stdin);
 		${0}
 	    return 0;
 	}
@@ -39,3 +38,6 @@ snippet fori "for"
 	for (int i = 0; i < ${0}; ++i){
 
 	}
+
+snippet input "open freopen"
+    	freopen("input/${0}.txt", "r", stdin);

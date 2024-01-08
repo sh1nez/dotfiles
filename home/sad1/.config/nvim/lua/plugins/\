@@ -8,16 +8,15 @@ local lspconfig = require('lspconfig')
 lspconfig.pylsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.clangd.setup {
-	on_attach = on_attach,
-    init_options = {
-        usePlaceholders = true,
-        completeUnimported = true,
-        clangdFileStatus = true
-    },
-    filetypes = { "c", "cpp", "h", "hpp" },
-	root_dir = lspconfig.util.root_pattern('.git', 'compile_commands.json', '.clangd', '.clang-tidy', '.clang-format', 'compile_flags.txt', 'configure.ac', '.git'),
+	require'lspconfig'.clangd.setup{
+	settings = {
+		cmd = {"clangd"},
+		filetypes = {"c", "cpp", "objc", "objcpp", "cuda", "proto"},
+		root_dir = vim.fn.getcwd(),
+		root_pattern(".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git"),
+	}
 }
-
+}
 lspconfig.asm_lsp.setup{
 	capabilities = capabilities,
 	root_dir = lspconfig.util.root_pattern('settings.json');

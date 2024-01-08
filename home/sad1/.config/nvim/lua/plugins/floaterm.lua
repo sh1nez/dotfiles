@@ -8,16 +8,16 @@ local switch_cases = {
     -- vilocal file_directory = vim.fn.expand("%:h")   
 	    local file_directory = vim.fn.fnamemodify(file, ":h")
         local file_name = vim.fn.expand("%:t:r")
-		local flags = " -Wall -Wextra -fsanitize=undefined -g "
-        execute_command("cd " .. file_directory .. " && g++ " .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+		local flags = " -Wall -Wpedantic -Wextra -fsanitize=undefined -g "
+        execute_command("cd " .. file_directory .. " && clang++ " .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
 
     end,
 
     c = function(file)
 		local file_directory = vim.fn.fnamemodify(file, ":h")
         local file_name = vim.fn.expand("%:t:r")
-		local flags = " -Wall -Wextra -fsanitize=undefined -g "
-        execute_command("cd " .. file_directory .. " && gcc" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+		local flags = " -Wall -Wpedantic -Wextra -fsanitize=undefined -g "
+        execute_command("cd " .. file_directory .. " && clang" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
 
     end,
     py = function(file)
