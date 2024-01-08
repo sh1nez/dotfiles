@@ -22,6 +22,8 @@ dot_directories="
 	${HOME}/.config/sxhkd/
 	${HOME}/.xinitrc
     ${HOME}/.icons/
+	${HOME}/.clangd
+	${HOME}/.clang-format
 "
 
 for dir in $dot_directories; do
