@@ -1,7 +1,9 @@
 snippet sss "start"
 	#include <iostream>
 
-	int main() {
+	using namespace std;
+
+	int main(void) {
 		${0}
 	    return 0;
 	}
@@ -27,7 +29,7 @@ snippet test "test system"
 	}
 
 
-	int main() {
+	int main(void) {
 		printf("%i\n\n", solution());
 
 		/* printf("%b\n", solution() == ); */
