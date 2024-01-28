@@ -1,2 +1,8 @@
 CompileFlags:
-  Add: ["-std=c++23", "-Wpedantic"]
+  Add: ["-Wpedantic",
+    % if __cplusplus
+      "-std=c++23"
+    % else
+      "-std=c99"
+    % endif
+  ]
