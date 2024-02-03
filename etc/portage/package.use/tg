@@ -1,6 +1,11 @@
-net-im/telegram-desktop::mva -screencast -lto -qt6 -qt6-imageformats -webkit tdesktop_patches_hide-banned
-# net-im/telegram-dektop 
-x11-libs/gtk+ wayland
-media-libs/mesa wayland
+# net-im/telegram-desktop screencast qt6 qt6-imageformats -X -pulseaudio
+net-im/telegram-desktop::mva -lto -wayland -qt6 -qt6-imageformats -webkit tdesktop_patches_hide-banned 
+
+
+
+#media-libs/tg_owt screencast -X
+#media-libs/libtgvoip  -pulseaudio
+#dev-qt/qtwayland compositor
+
 media-video/ffmpeg vpx opus openh264
 sys-libs/zlib minizip

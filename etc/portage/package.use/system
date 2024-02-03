@@ -1,7 +1,9 @@
 dev-lang/rust nightly
-sys-apps/systemd boot -dns-over-tls kernel-install elfutils
-sys-apps/systemd-utils boot kernel-install
+sys-apps/systemd -dns-over-tls kernel-install elfutils
+sys-apps/systemd-utils
 sys-devel/binutils -pgo
 sys-devel/gcc -lto -pgo
 media-libs/mesa vdpau vaapi 
 sys-firmware/intel-microcode hostonly initramfs
+sys-kernel/installkernel dracut -systemd
+
