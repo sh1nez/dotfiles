@@ -1,6 +1,7 @@
 #!/bin/env sh
-target_dir="${HOME}/git/dotfiles"
 
+
+target_dir="${HOME}/git/dotfiles"
 dot_directories="
     /etc/portage/
 	/etc/systemd/
@@ -22,8 +23,6 @@ dot_directories="
 	${HOME}/.config/sxhkd/
 	${HOME}/.xinitrc
     ${HOME}/.icons/
-	${HOME}/.clangd
-	${HOME}/.clang-format
 "
 
 for dir in $dot_directories; do
