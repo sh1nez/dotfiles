@@ -1,8 +1,6 @@
 dev-util/radare2 ~amd64
 app-arch/7zip ~amd64
 dev-util/xxd ~amd64
-# dev-lang/luajit ** 
-# app-eselect/eselect-luajit ~amd64
-#
 app-containers/podman-tui ~amd64
+dev-util/sasm ~amd64
 

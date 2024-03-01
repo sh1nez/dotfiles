@@ -30,23 +30,27 @@ require("lazy").setup({
 
 	{ 'neovim/nvim-lspconfig' },
 	{ 'williamboman/mason-lspconfig.nvim' },
-	{ "williamboman/mason.nvim",             lazy = true },
+	{ "williamboman/mason.nvim", },
 
 	{ 'hrsh7th/cmp-nvim-lsp' },
 	{ 'hrsh7th/cmp-buffer' },
 	{ 'hrsh7th/cmp-path' },
 	{ 'hrsh7th/cmp-cmdline' },
-	{ 'hrsh7th/nvim-cmp' }, --dependencies = { 'quangnguyen30192/cmp-nvim-ultisnips' } },
+	{ 'hrsh7th/nvim-cmp', }, --dependencies = { 'quangnguyen30192/cmp-nvim-ultisnips' } },
 
-	{ 'nvim-telescope/telescope.nvim',       branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+	{ 'nvim-telescope/telescope.nvim',       lazy = true,        branch = '0.1.x',                      dependencies = { 'nvim-lua/plenary.nvim' } },
 
 	{ 'terrortylor/nvim-comment' },
 	{ 'voldikss/vim-floaterm' },
-	{ 'eandrju/cellular-automaton.nvim' },
-	{ 'jiangmiao/auto-pairs',                lazy = true },
-	{ 'lukas-reineke/indent-blankline.nvim', main = "ibl",     opts = { scope = { enabled = false } } },
+	{ 'eandrju/cellular-automaton.nvim',     event = "VeryLazy" },
+	{ 'jiangmiao/auto-pairs',                },
+	{ 'lukas-reineke/indent-blankline.nvim', main = "ibl",       opts = { scope = { enabled = false } } },
 
-	{ "L3MON4D3/LuaSnip",                    version = "v2.*", build = "make install_jsregexp" },
-	{ 'saadparwaiz1/cmp_luasnip' },
-	{ "kylechui/nvim-surround",              version = "*",    event = "VeryLazy", }
+	{ "L3MON4D3/LuaSnip",                    event = "VeryLazy",        version = "v2.*",                      build = "make install_jsregexp" },
+	{ 'saadparwaiz1/cmp_luasnip'},
+	{ "kylechui/nvim-surround",              event = "VeryLazy", version = "*", },
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	}
 })

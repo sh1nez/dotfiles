@@ -13,7 +13,7 @@ dap.adapters.codelldb = {
   }
 }
 
-lua require('dap-python').setup('/home/sad1/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+require('dap-python').setup('/home/sad1/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
 dap.configurations.python = {
       {
         type = 'python';
