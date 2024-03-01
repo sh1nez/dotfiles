@@ -1,8 +1,0 @@
-CompileFlags:
-  Add: ["-Wpedantic",
-    % if __cplusplus
-      "-std=c++23"
-    % else
-      "-std=c99"
-    % endif
-  ]

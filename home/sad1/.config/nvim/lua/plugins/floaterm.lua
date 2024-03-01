@@ -1,65 +1,86 @@
-local function execute_command(com)
-    vim.cmd(":w")
-    vim.cmd(":FloatermNew! "  .. com)
+local function execute_command(comman)
+	vim.cmd(":w")
+	vim.cmd(":FloatermNew! " .. comman)
 end
- 
+
 local switch_cases = {
-    cpp = function(file)
-    -- vilocal file_directory = vim.fn.expand("%:h")   
-	    local file_directory = vim.fn.fnamemodify(file, ":h")
-        local file_name = vim.fn.expand("%:t:r")
-		local flags = " -Wall -Wpedantic -Wextra -fsanitize=undefined -g "
-        execute_command("cd " .. file_directory .. " && clang++ " .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
-
-    end,
-
-    c = function(file)
+	cpp = function(file)
+		-- vilocal file_directory = vim.fn.expand("%:h")
 		local file_directory = vim.fn.fnamemodify(file, ":h")
-        local file_name = vim.fn.expand("%:t:r")
+		local file_name = vim.fn.expand("%:t:r")
 		local flags = " -Wall -Wpedantic -Wextra -fsanitize=undefined -g "
-        execute_command("cd " .. file_directory .. " && clang" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+		execute_command("cd " ..
+			file_directory .. " && g++ " .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+	end,
 
-    end,
-    py = function(file)
-        execute_command("time python3 " .. file)
-    end,
-    lua = function(file)
-        execute_command("time lua " .. file)
-    end,
-    sh = function(file)
-        execute_command("time bash " .. file)
-    end,
-	asm = function (file)
+	c = function(file)
 		local file_directory = vim.fn.fnamemodify(file, ":h")
-        local file_name = vim.fn.expand("%:t:r")
-        execute_command("cd " .. file_directory .. " && nasm -f elf64 " .. file .. ' -o ' .. file_name ..  '.o' ..  ' && ' .. 'ld -m elf_x86_64 -o ' .. file_name .. ' ' .. file_name .. '.o' .. ' && time ./' .. file_name)
+		local file_name = vim.fn.expand("%:t:r")
+		local flags = " -Wall -Wpedantic -Wextra -fsanitize=undefined -g "
+		execute_command("cd " ..
+			file_directory .. " && g" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+	end,
+	py = function(file)
+		execute_command("time python3 " .. file)
+	end,
+	lua = function(file)
+		execute_command("time lua " .. file)
+	end,
+	sh = function(file)
+		execute_command("time bash " .. file)
+	end,
+	asm = function(file)
+		local file_directory = vim.fn.fnamemodify(file, ":h")
+		local file_name = vim.fn.expand("%:t:r")
+		execute_command("cd " ..
+			file_directory ..
+			" && nasm -f elf64 " ..
+			file ..
+			' -o ' ..
+			file_name ..
+			'.o' ..
+			' && ' .. 'ld -m elf_x86_64 -o ' .. file_name .. ' ' .. file_name .. '.o' .. ' && time ./' .. file_name)
 	end,
 	s = function(file)
 		local file_directory = vim.fn.fnamemodify(file, ":h")
-        local file_name = vim.fn.expand("%:t:r")
+		local file_name = vim.fn.expand("%:t:r")
 
-        execute_command("cd " .. file_directory .. " && nasm -f elf64 " .. file .. ' -o ' .. file_name ..  '.o' ..  ' && ' .. 'ld -m elf_x86_64 -o ' .. file_name .. ' ' .. file_name .. '.o' .. ' && time ./' .. file_name)
+		execute_command("cd " ..
+			vim.fn.fnamemodify(file, ":h") ..
+			" && as " ..
+			file ..
+			' -o ' ..
+			file_name .. '.o' .. " && ld " .. file_name .. '.o' .. " -o " .. file_name .. " && time ./" .. file_name)
 
+		-- execute_command("cd " ..
+		-- 	file_directory ..
+		-- 	" && nasm -f elf64 " ..
+		-- 	file ..
+		-- 	' -o ' ..
+		-- 	file_name ..
+		-- 	'.o' ..
+		-- 	' && ' .. 'ld -m elf_x86_64 -o ' .. file_name .. ' ' .. file_name .. '.o' .. ' && time ./' .. file_name)
+	end,
 
-    end,
-
-    default = function(_)
-        vim.cmd(":w")
-        vim.cmd('echo "Unsupported file type: ' .. file_extension .. '"')
-    end,
+	default = function(_)
+		vim.cmd(":w")
+		vim.cmd('echo "Unsupported file type: ' .. file_extension .. '"')
+	end,
 }
 
 function run_or_compile(file)
-    local file_extension = file:match(".*%.(.*)")
-    if not file_extension then
-        vim.cmd(":w")
-        return
-    end
-    (switch_cases[file_extension] or switch_cases.default)(file)
+	local file_extension = file:match(".*%.(.*)")
+	if not file_extension then
+		vim.cmd(":w")
+		return
+	end
+	(switch_cases[file_extension] or switch_cases.default)(file)
 end
+
 vim.keymap.set('n', '<leader>R', ':FloatermNew<CR>')
 
-vim.api.nvim_set_keymap('n', '<leader>r', [[:lua run_or_compile(vim.fn.expand("%:p"))<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>r', [[:lua run_or_compile(vim.fn.expand("%:p"))<CR>]],
+	{ noremap = true, silent = true })
 
 vim.g.floaterm_position = 'bottom'
 vim.g.floaterm_direction = 'vertical'
