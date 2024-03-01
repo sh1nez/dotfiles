@@ -1,0 +1,27 @@
+#!/bin/bash
+PROFILE_DIR=/var/tmp/pgo/${PN}
+CFLAGS_PROFILE_GEN="-fprofile-generate=${PROFILE_DIR} -Wno-error=coverage-mismatch -fprofile-arcs -fvpt"
+CFLAGS_PROFILE_USE="-fprofile-use=${PROFILE_DIR} -Wno-error=coverage-mismatch -fprofile-correction"
+LDFLAGS_PROFILE_GEN="-fprofile-arcs"
+
+CFLAGS_CUSTOM=""
+LDFLAGS_CUSTOM=""
+
+
+if [ -d ${PROFILE_DIR} ]
+then
+  CFLAGS="${CFLAGS} ${CFLAGS_CUSTOM} ${CFLAGS_PROFILE_USE}"
+  LDFLAGS="${LDFLAGS} ${LDFLAGS_CUSTOM}"
+  echo
+  echo "using pgo"
+  echo
+
+else
+  CFLAGS="${CFLAGS} ${CFLAGS_CUSTOM} ${CFLAGS_PROFILE_GEN}"
+  LDFLAGS="${LDFLAGS} ${LDFLAGS_CUSTOM} ${LDFLAGS_PROFILE_GEN}"
+  echo
+  echo "using pgo"
+  echo
+fi
+
+CXXFLAGS="${CFLAGS}" 
