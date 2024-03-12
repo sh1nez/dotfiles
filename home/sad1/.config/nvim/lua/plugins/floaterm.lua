@@ -18,7 +18,7 @@ local switch_cases = {
 		local file_name = vim.fn.expand("%:t:r")
 		local flags = " -Wall -Wpedantic -Wextra -fsanitize=undefined -g "
 		execute_command("cd " ..
-			file_directory .. " && g" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+			file_directory .. " && gcc" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
 	end,
 	py = function(file)
 		execute_command("time python3 " .. file)

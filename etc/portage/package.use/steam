@@ -33,7 +33,7 @@ media-libs/libpng abi_x86_32
 media-libs/tiff abi_x86_32
 net-dns/libidn2 abi_x86_32
 net-libs/gnutls abi_x86_32
-net-misc/curl abi_x86_32
+#net-misc/curl abi_x86_32
 net-nds/openldap abi_x86_32
 net-print/cups abi_x86_32
 sys-apps/attr abi_x86_32
@@ -123,9 +123,13 @@ x11-libs/libXtst abi_x86_32
 dev-libs/libpcre2 abi_x86_32
 virtual/libintl abi_x86_32
 sys-libs/libudev-compat abi_x86_32
-#X11-libs/gtk+ abi_x86_32
+X11-libs/gtk+ abi_x86_32
+media-libs/libpulse abi_x86_32
 
 
-#virtual/rust abi_x86_32
-#dev-lang/rust-bin abi_x86_32
-
+media-libs/libsndfile  abi_x86_32
+x11-libs/libvdpau abi_x86_32
+media-libs/libva abi_x86_32
+net-libs/libasyncns abi_x86_32
+media-libs/mesa abi_x86_32
+virtual/opengl  abi_x86_32
