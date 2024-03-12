@@ -12,7 +12,6 @@ require("plugins.treesitter")
 require("plugins.comment")
 require("plugins.lsp")
 require("plugins.cmp")
--- require('plugins.dap')
 require("plugins.telescope")
 
 require("plugins.floaterm")
@@ -23,8 +22,13 @@ require("nvim-surround").setup()
 require("plugins.shiza")
 require('plugins.lualine')
 
--- require("ibl").setup({scope = { enabled = false;}})
 
 -- Задаем пользовательские клавиатурные отображения для перемещения вверх и вниз
 vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = true, silent = true })
+require("plugins.hex")
+
+require("plugins.dap")
+-- if vim.fn.executable('gdb') == 1 then
+-- 	require('plugins.dap.c')
+-- end

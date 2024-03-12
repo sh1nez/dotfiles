@@ -43,14 +43,27 @@ require("lazy").setup({
 	{ 'terrortylor/nvim-comment' },
 	{ 'voldikss/vim-floaterm' },
 	{ 'eandrju/cellular-automaton.nvim',     event = "VeryLazy" },
-	{ 'jiangmiao/auto-pairs',                },
+	{ 'jiangmiao/auto-pairs', },
 	{ 'lukas-reineke/indent-blankline.nvim', main = "ibl",       opts = { scope = { enabled = false } } },
 
-	{ "L3MON4D3/LuaSnip",                    event = "VeryLazy",        version = "v2.*",                      build = "make install_jsregexp" },
-	{ 'saadparwaiz1/cmp_luasnip'},
+	{ "L3MON4D3/LuaSnip",                    event = "VeryLazy", version = "v2.*",                      build = "make install_jsregexp" },
+	{ 'saadparwaiz1/cmp_luasnip' },
 	{ "kylechui/nvim-surround",              event = "VeryLazy", version = "*", },
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
-	}
-})
+	},
+	{ 'RaafatTurki/hex.nvim', event = "VeryLazy" },
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"rcarriga/nvim-dap-ui" },
+		opts = {
+			handlers = {},
+			-- ensure_installde = {
+			-- 	"codelldb"
+			-- }
+		}
+	} })

@@ -10,8 +10,7 @@ vim.keymap.set('i', '<C-k>', '<Up>')
 vim.keymap.set('i', '<C-l>', '<Right>')
 vim.g.AutoPairsMapCh = 0
 
-vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>hh', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>jj', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>hh', { noremap = true, silent = true }) vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>jj', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>kk', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>ll', { noremap = true, silent = true })
 vim.keymap.set('n', '+', ':vsplit<CR>')
