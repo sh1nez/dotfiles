@@ -1,1 +1,1 @@
-i use gentoo btw
+i use arch btw

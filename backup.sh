@@ -1,9 +1,8 @@
 #!/bin/env sh
 
 
-target_dir="${HOME}/git/dotfiles"
+target_dir="$PWD"
 dot_directories="
-    /etc/portage/
 	/etc/systemd/
     ${HOME}/.config/alacritty/
 	${HOME}/.config/cava/
@@ -26,16 +25,15 @@ dot_directories="
 "
 
 for dir in $dot_directories; do
-        if [ ! -d ${target_dir}${dir} ]; then
-                mkdir --parents ${target_dir}${dir}
+        if [ ! -d "${target_dir}""${dir}" ]; then
+                mkdir --parents "${target_dir}""${dir}"
         fi
 done
 
 
 for dir in $dot_directories; do
-        rsync -auv --delete ${dir} ${target_dir}${dir}
+        rsync -auv --delete "${dir}" "${target_dir}""${dir}"
 done
-equery list "*" > ${target_dir}/all_pkg
 
 date=$(date +"%Y-%m-%d %H:%M")
 git -C "$target_dir" add -A && git -C "$target_dir" commit -m "$date" && git -C "$target_dir" push
