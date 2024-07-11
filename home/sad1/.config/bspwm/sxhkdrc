@@ -1,0 +1,133 @@
+super + Return
+	OpenApps --terminal
+
+super + alt + Return
+	OpenApps --floating
+
+super + r
+	OpenApps --menu
+
+super + w
+	OpenApps --apps
+
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+# Terminal apps (ranger, nvim, ncmpcpp)
+super + alt + {r,v,k}
+	OpenApps {--ranger,--nvim,--music}
+
+# Pavucontrol
+super + alt + p
+	OpenApps --soundcontrol
+
+super + @space
+	RiceSelector
+
+super + alt + w
+	WallSelect
+
+super + alt + t
+	Term --selecterm
+
+super + alt + {h,u}
+	HideBar {-h,-u}
+
+super + {plus,minus,equal}
+	picom-trans {-c -o +3,-c -o -1,-c -d}
+
+Print
+	flameshot gui
+
+alt + Print
+	sleep 2; flameshot gui
+
+super + Print 
+	flameshot full
+
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + alt + {m,x,s,p}
+	bspc node -g {marked,locked,sticky,private}
+
+# Hide/Unhide Window
+super + ctrl + h
+	BspHideNode
+
+super + {Left,Right}
+	bspc desktop -f {prev,next}.local
+
+# focus or send to the given desktop
+super + {_,shift+ }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Send focused Node to workspace directionally
+super + alt + {h,l}
+	bspc node -d {prev,next} '--follow'
+
+# focus the last node/desktop
+super + {comma,Tab}
+	bspc {node,desktop} -f last
+
+XF86MonBrightness{Up,Down}
+    sh Brightness {up,down}
+
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	Volume{ --inc, --dec, --toggle}
+
+XF86Audio{Next,Prev,Play,Stop}
+	MediaControl {--next,--previous,--toggle,--stop}
+
+ctrl + super + alt + {p,r,q,l,k}
+	{systemctl poweroff, systemctl reboot,bspc quit,physlock -d,xkill}
+
+super + Escape
+	pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/assets/reload.svg 'sxhkd' 'The configuration file has been reloaded successfully!'
+
+super + shift + Escape
+	bspc wm -r
+
+~button3
+  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/scripts/menu.txt --config-file=~/.config/bspwm/jgmenurc
+
+
+# rotate desktop
+# super + alt + r
+# 	bspc node @/ --rotate {90,-90}
+
+# Change focus of the Node or Swap Nodes
+# shift + super {_,ctrl + }{Left,Down,Up,Right}
+# 	bspc node -{f,s} {west,south,north,east}
+
+# preselect the direction
+# super + {h,j,k,l}
+# 	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused node
+# super + alt + space
+# 	bspc node -p cancel
+#
+# # expand a window
+# ctrl + alt {Left,Down,Up,Right}
+# 	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
+#
+# # contract a window
+# ctrl + shift + alt + {Left,Down,Up,Right}
+# 	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
+#
+# # move a floating window
+# alt + shift {Left,Down,Up,Right}
+# 	bspc node -v {-10 0,0 10,0 -10,10 0}
