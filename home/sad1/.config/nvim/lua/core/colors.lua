@@ -8,4 +8,7 @@
 --SetColor()
 -- vim.cmd("colorscheme onedark_dark")
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd([[colorscheme tokyonigh]])
+vim.cmd[[colorscheme tokyonight-night]]
+--  tgruvbox]])
+

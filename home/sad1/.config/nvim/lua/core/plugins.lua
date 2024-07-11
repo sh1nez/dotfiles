@@ -24,6 +24,7 @@ require("lazy").setup({
 	},
 	{ 'nvim-treesitter/nvim-treesitter' },
 	{ "ellisonleao/gruvbox.nvim" },
+	{ "folke/tokyonight.nvim"},
 	{ 'neovim/nvim-lspconfig' },
 	{ 'joshdick/onedark.vim' },
 	{ 'olimorris/onedarkpro.nvim' },
@@ -60,7 +61,9 @@ require("lazy").setup({
 		dependencies = {
 			"folke/neodev.nvim",
 			"mfussenegger/nvim-dap",
-			"rcarriga/nvim-dap-ui" },
+			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio",
+		},
 		opts = {
 			handlers = {},
 			-- ensure_installde = {
