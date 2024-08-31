@@ -3,26 +3,26 @@
 
 target_dir="$PWD"
 dot_directories="
-	/etc/systemd/
     ${HOME}/.config/alacritty/
-	${HOME}/.config/cava/
-	${HOME}/.config/fontconfig/
-	${HOME}/.config/foot/
-	${HOME}/.config/htop/	
 	${HOME}/.config/kitty/
+
+	${HOME}/.config/cava/
 	${HOME}/.config/mako/
 	${HOME}/.config/neofetch/
-	${HOME}/.config/pavucontrol.ini
-	${HOME}/.config/sway/
-	${HOME}/.config/systemd/
-	${HOME}/.config/Thunar/
-    ${HOME}/.config/gtk-3.0/
-    ${HOME}/.config/nvim/
-	${HOME}/.config/bspwm/
+
+	${HOME}/.config/bspwm/ 
 	${HOME}/.config/sxhkd/
+	${HOME}/.config/fontconfig/
+    ${HOME}/.config/gtk-3.0/
+	${HOME}/.config/pavucontrol.ini
 	${HOME}/.xinitrc
-    ${HOME}/.icons/
+
+	${HOME}/.config/btop/	
+    ${HOME}/.config/nvim/
+	${HOME}/.config/fish/
+	${HOME}/.config/tmux/
 "
+# bspwm dots https://github.com/gh0stzk/dotfiles
 
 for dir in $dot_directories; do
         if [ ! -d "${target_dir}""${dir}" ]; then
