@@ -29,6 +29,4 @@ vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, no
 require("plugins.hex")
 
 require("plugins.dap")
--- if vim.fn.executable('gdb') == 1 then
--- 	require('plugins.dap.c')
--- end
+require("plugins.docker")

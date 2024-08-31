@@ -28,6 +28,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Default 1 monitor with 6 workspaces
 #
+# xrandr --output HDMI-0 --mode 1440x900
+# bspc monitor HDMI-0 -d 1 2 3 4 5 6 7 8
 bspc monitor DVI-D-0 -d 1 2 3 4 5 
 bspc monitor DVI-I-0 -d 6 7 8 9 0
 # for monitor in $(xrandr -q | grep -w 'connected' | cut -d' ' -f1); do

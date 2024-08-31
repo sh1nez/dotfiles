@@ -6,6 +6,10 @@ require("mason-lspconfig").setup({
 local lspconfig = require('lspconfig')
 
 lspconfig.bashls.setup {}
+
+lspconfig.docker_compose_language_service.setup {
+	root_dir = lspconfig.util.root_pattern("docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml")
+}
 lspconfig.zls.setup {}
 lspconfig.pylsp.setup {}
 lspconfig.lua_ls.setup {}
@@ -24,6 +28,7 @@ lspconfig.clangd.setup {
 lspconfig.asm_lsp.setup {
 	capabilities = capabilities,
 	root_dir = lspconfig.util.root_pattern('settings.json'),
+	filetypes = { "asm", "S" },
 }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

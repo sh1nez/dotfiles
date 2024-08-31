@@ -15,9 +15,9 @@ case "$1" in
     --menu)
         rofi -show drun -theme "$HOME"/.config/bspwm/scripts/Launcher.rasi 
         ;;
-	--apps)
+	--apps) 
         rofi -show window -theme "$HOME"/.config/bspwm/scripts/Launcher.rasi 
-        ;;
+		;;
     --rice)
         RiceSelector
         ;;
