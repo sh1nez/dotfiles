@@ -19,7 +19,8 @@ local switch_cases = {
 		local file_name = vim.fn.expand("%:t:r")
 		local flags = " -Wall -Wpedantic -Wextra -fsanitize=undefined -g "
 		execute_command("cd " ..
-			file_directory .. " && gcc" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name) end,
+			file_directory .. " && gcc" .. flags .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
+	end,
 	py = function(file)
 		execute_command("time python3 " .. file)
 	end,
@@ -51,6 +52,12 @@ local switch_cases = {
 		local file_name = vim.fn.expand("%:t:r")
 		-- execute_command("cd " .. file_directory .. " && gcc" .. file .. ' -o ' .. file_name .. ' && time ./' .. file_name)
 		execute_command("cd " .. file_directory .. " && zig run " .. file_name .. ".zig")
+	end,
+
+	rs = function(file)
+		local file_directory = vim.fn.fnamemodify(file, ":h")
+		local file_name = vim.fn.expand("%:t:r")
+		execute_command("cd " .. file_directory .. " && cargo run")
 	end,
 
 	default = function(_)

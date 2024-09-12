@@ -1,19 +1,29 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls" },
+	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer" },
 })
 
 local lspconfig = require('lspconfig')
 
 lspconfig.bashls.setup {}
-
-lspconfig.docker_compose_language_service.setup {
-	root_dir = lspconfig.util.root_pattern("docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml")
-}
+lspconfig.docker_compose_language_service.setup {}
+lspconfig.dockerls.setup {}
 lspconfig.zls.setup {}
 lspconfig.pylsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.cmake.setup {}
+lspconfig.rust_analyzer.setup {
+	settings = {
+		['rust-analyzer'] = {
+			procMacro = {
+				enable = true, -- Включаем поддержку процедурных макросов
+			},
+			cargo = {
+				loadOutDirsFromCheck = true, -- Это может помочь в улучшении подсказок для макросов, особенно для макросов, связанных с `build.rs`
+			},
+		}
+	}
+}
 lspconfig.clangd.setup {
 	on_attach = on_attach,
 	init_options = {
