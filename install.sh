@@ -4,17 +4,17 @@ pacman -Syu
 
 MAIN_USER=2happy
 USER_MAIL=biv888iii888@yandex.ru
-if [ ! "$INSTALL" ]; then
+if [ -z "$INSTALL" ]; then
 	INSTALL="pacman -S"
 fi
 
-yes | $INSTALL tmux | true
-yes | $INSTALL neovim | true 
-yes | $INSTALL ranger | true 
-yes | $INSTALL btop | true 
-yes | $INSTALL ripgrep | true 
-yes | $INSTALL neofetch | true 
-yes | $INSTALL fish | true 
+yes | $INSTALL tmux
+yes | $INSTALL neovim
+yes | $INSTALL ranger
+yes | $INSTALL btop
+yes | $INSTALL ripgrep
+yes | $INSTALL neofetch
+yes | $INSTALL fish
 
 ln -s /usr/bin/nvim /usr/bin/v
 ln -s /usr/bin/nvim /usr/bin/vi
@@ -41,7 +41,7 @@ echo
 echo "gen ssh key..."
 echo 
 
-ssh-keygen -t ed25519 -C $MAIN_USER
+ssh-keygen -t ed25519 -C $USER_MAIL
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
