@@ -20,6 +20,9 @@ ln -s /usr/bin/nvim /usr/bin/v
 ln -s /usr/bin/nvim /usr/bin/vi
 
 useradd -m -G wheel $MAIN_USER
+usermod -aG wheel 2happy
+
+echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 yes | $INSTALL --needed base-devel
 su -c "cd /home/$MAIN_USER/ && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si" $MAIN_USER
@@ -46,3 +49,27 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
 neofetch
+
+xray-vpn() {
+	bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
+	echo and x-ui now!
+	bash <(curl -Ls https://raw.githubusercontent.com/lankylonky22/x-ui-arch/main/install.sh)
+}
+
+while true; do
+  read -r -p "install vpn??" answer
+  case $answer in
+    [Yy]* ) 
+	  xray-vpn
+      break
+      ;;
+    [Nn]* )
+      exit
+      ;;
+    * ) 
+      echo "Only y/n"
+      ;;
+  esac
+done
+
+
