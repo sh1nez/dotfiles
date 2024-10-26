@@ -5,6 +5,9 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require('lspconfig')
 
+require'lspconfig'.biome.setup{}
+
+lspconfig.ts_ls.setup {}
 lspconfig.bashls.setup {}
 lspconfig.docker_compose_language_service.setup {}
 lspconfig.dockerls.setup {}

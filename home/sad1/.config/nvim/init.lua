@@ -30,3 +30,4 @@ require("plugins.hex")
 
 require("plugins.dap")
 require("plugins.docker")
+require("plugins.markdown")
