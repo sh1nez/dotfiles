@@ -20,7 +20,10 @@ ln -s /usr/bin/nvim /usr/bin/v
 ln -s /usr/bin/nvim /usr/bin/vi
 
 useradd -m -G wheel $MAIN_USER
-usermod -aG wheel 2happy
+usermod -aG wheel $MAIN_USER
+
+git config --global user.name "$MAIN_USER"
+git config --global user.email "$USER_MAIL"
 
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
@@ -51,8 +54,6 @@ ssh-add ~/.ssh/id_ed25519
 neofetch
 
 xray-vpn() {
-	bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
-	echo and x-ui now!
 	bash <(curl -Ls https://raw.githubusercontent.com/lankylonky22/x-ui-arch/main/install.sh)
 }
 
