@@ -57,6 +57,10 @@ xray-vpn() {
 	bash <(curl -Ls https://raw.githubusercontent.com/lankylonky22/x-ui-arch/main/install.sh)
 }
 
+install-web() {
+	"$INSTALL" docker nginx speedtest-cli
+}
+
 while true; do
   read -r -p "install vpn??" answer
   case $answer in
@@ -74,3 +78,4 @@ while true; do
 done
 
 
+install-web
