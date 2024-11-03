@@ -1,0 +1,18 @@
+font=jetbrainsmono-nerdfont 10
+background-color=#17041cff
+text-color=#ffffffff
+#ffffff
+progress-color=over #00000044
+margin=0
+padding=5
+border-size=1
+default-timeout=3900
+max-visible=3
+background-color = type(notification: urgency: "critical") ? "#ff0000" : "#00ff00"
+#format=<span font='7'>%a</span>\n<b>%s</b>\n%b
+#layer=overlay
+#group-by=summary
+#icon-path=/usr/share/icons/Test:/usr/share/icons/Adwaita
+#max-icon-size=48
+
+
