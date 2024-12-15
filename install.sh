@@ -1,4 +1,4 @@
-#1/usr/bin/env bash
+#!/usr/bin/env bash
 
 pacman -Syu
 
@@ -15,6 +15,7 @@ yes | $INSTALL btop
 yes | $INSTALL ripgrep
 yes | $INSTALL neofetch
 yes | $INSTALL fish
+yes | $INSTALL wget curl
 
 ln -s /usr/bin/nvim /usr/bin/v
 ln -s /usr/bin/nvim /usr/bin/vi
@@ -31,13 +32,14 @@ yes | $INSTALL --needed base-devel
 su -c "cd /home/$MAIN_USER/ && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si" $MAIN_USER
 
 chsh -s /usr/bin/fish
-su -c "chsh -s /usr/bin/fish" $MAIN_USER
+# su -c "chsh -s /usr/bin/fish" $MAIN_USER
 
 copy_to_dir() {
 	mkdir "$1"/.config/ | true
-	cp -r home/sad1/.config/fish/ "$1"/.config/
-	cp -r home/sad1/.config/btop/ "$1"/.config/
-	cp -r home/sad1/.config/tmux/ "$1"/.config/
+	cp -r home/2happy/.config/fish/ "$1"/.config/
+	cp -r home/2happy/.config/btop/ "$1"/.config/
+	cp -r home/2happy/.config/tmux/ "$1"/.config/
+	cp -r home/2happy/.config/nvim/ "$1"/.config/
 }
 
 copy_to_dir "/root"
@@ -54,11 +56,11 @@ ssh-add ~/.ssh/id_ed25519
 neofetch
 
 xray-vpn() {
-	bash <(curl -Ls https://raw.githubusercontent.com/lankylonky22/x-ui-arch/main/install.sh)
+	bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 }
 
 install-web() {
-	"$INSTALL" docker nginx speedtest-cli
+	"$INSTALL" docker nginx speedtest-cli npm
 }
 
 while true; do
@@ -76,6 +78,7 @@ while true; do
       ;;
   esac
 done
+
 
 
 install-web
