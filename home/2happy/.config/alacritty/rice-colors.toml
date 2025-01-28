@@ -1,33 +1,33 @@
-# (Zombie-Night) Color scheme for Karla Rice
+# (Dracula) color scheme for Marisol Rice
 
 # Default colors
 [colors.primary]
-background = "#0E1113"
-foreground = "#afb1db"
+background = "#282a36"
+foreground = "#f8f8f2"
 
 # Cursor colors
 [colors.cursor]
-cursor = "#8656e3"
-text = "#0b0b12"
+cursor = "#f8f8f2"
+text = "#282a36"
 
 # Normal colors
 [colors.normal]
-black = "#2d2b36"
-blue = "#5884d4"
-cyan = "#7df0f0"
-green = "#61b33e"
-magenta = "#7a44e3"
-red = "#e7034a"
-white = "#faf7ff"
-yellow = "#ffb964"
+black = "#21222c"
+blue = "#bd93f9"
+cyan = "#8be9fd"
+green = "#50fa7b"
+magenta = "#ff79c6"
+red = "#ff5555"
+white = "#f8f8f2"
+yellow = "#f1fa8c"
 
 # Bright colors
 [colors.bright]
-black = "#373542"
-blue = "#5f90ea"
-cyan = "#97f0f0"
-green = "#6fb352"
-magenta = "#8656e3"
-red = "#e71c5b"
-white = "#fdfcff"
-yellow = "#ffb964"
+black = "#6272a4"
+blue = "#d6acff"
+cyan = "#a4ffff"
+green = "#69ff94"
+magenta = "#ff92df"
+red = "#ff6e6e"
+white = "#ffffff"
+yellow = "#ffffa5"

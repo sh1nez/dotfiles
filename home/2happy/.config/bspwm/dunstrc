@@ -1,14 +1,14 @@
 [urgency_low]
 timeout = 3
-background = "#0E1113"
-foreground = "#afb1db"
+background = "#282a36"
+foreground = "#f8f8f2"
 
 [urgency_normal]
 timeout = 6
-background = "#0E1113"
-foreground = "#afb1db"
+background = "#282a36"
+foreground = "#f8f8f2"
 
 [urgency_critical]
 timeout = 0
-background = "#0E1113"
-foreground = "#afb1db"
+background = "#282a36"
+foreground = "#f8f8f2"

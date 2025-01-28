@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "emmet_ls", "cssls" }, }
+	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", }, }
 )
 
 local lspconfig = require('lspconfig')
@@ -9,6 +9,8 @@ local lspconfig = require('lspconfig')
 
 
 lspconfig.ts_ls.setup {}
+
+lspconfig.intelephense.setup {}
 
 lspconfig.html.setup {
 	cmd = { "/usr/bin/vscode-html-language-server", "--stdio" },

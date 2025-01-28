@@ -67,7 +67,11 @@ local switch_cases = {
 		local file_name = vim.fn.expand("%:t:r")
 		execute_command("cd " .. file_directory .. " && tsc " .. file .. " --outDir tmp &&" .. " cd tmp && node " .. file_name ..".js")
 	end,
-
+	php = function (file)
+		local file_directory = vim.fn.fnamemodify(file, ":h")
+		local file_name = vim.fn.expand("%:t:r")
+		execute_command("cd " .. file_directory .. " && php " .. file)
+	end,
 
 	default = function(_)
 		vim.cmd(":w")
