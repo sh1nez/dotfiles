@@ -4,3 +4,4 @@ if status is-interactive
 end
 
 fish_add_path /home/2happy/yandex-cloud/bin/
+set -x http_proxy http://127.0.0.1:10808

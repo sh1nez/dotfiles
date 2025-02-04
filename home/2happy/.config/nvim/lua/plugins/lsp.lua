@@ -1,12 +1,12 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", }, }
+	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", "gopls" }, }
 )
 
 local lspconfig = require('lspconfig')
 
--- require 'lspconfig'.biome.setup {}
 
+lspconfig.gopls.setup {}
 
 lspconfig.ts_ls.setup {}
 
