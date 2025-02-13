@@ -57,7 +57,7 @@ require("lazy").setup({
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
 	},
-	{ 'RaafatTurki/hex.nvim', event = "VeryLazy" },
+	{ 'RaafatTurki/hex.nvim',   event = "VeryLazy" },
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		event = "VeryLazy",
@@ -83,5 +83,7 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
-
-})
+	{ 'mfussenegger/nvim-jdtls' },
+	{ 'sh1nez/nvim-inspector',  branch = 'Lua-Plug' }
+}
+)

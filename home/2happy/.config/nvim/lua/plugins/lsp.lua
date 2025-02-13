@@ -1,14 +1,15 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", "gopls" }, }
+	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", "gopls", "jdtls"  }, }
 )
 
 local lspconfig = require('lspconfig')
 
+lspconfig.jdtls.setup {}
 
 lspconfig.gopls.setup {}
 
-lspconfig.ts_ls.setup {}
+lspconfig.ts_ls.setup {  }
 
 lspconfig.intelephense.setup {}
 
@@ -21,22 +22,7 @@ lspconfig.cssls.setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.emmet_ls.setup({
-	-- on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "css", "eruby", "html", "less", "sass", "scss", "svelte", "pug", },
-	init_options = {
-		html = {
-			options = {
-				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-				["bem.enabled"] = true,
-			},
-		},
-	}
-})
-
 lspconfig.nginx_language_server.setup {}
-
 lspconfig.bashls.setup {}
 lspconfig.docker_compose_language_service.setup {}
 lspconfig.dockerls.setup {}
@@ -106,4 +92,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			vim.lsp.buf.format { async = true }
 		end, opts)
 	end,
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.env",
+  callback = function()
+    vim.lsp.stop_client(vim.lsp.get_active_clients())
+  end,
 })

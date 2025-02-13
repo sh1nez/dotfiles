@@ -31,3 +31,6 @@ require("plugins.hex")
 require("plugins.dap")
 require("plugins.docker")
 require("plugins.markdown")
+require("plugins.java")
+require("plugins.myplugin")
+

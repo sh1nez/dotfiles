@@ -25,9 +25,9 @@ vim.keymap.set('n', '<leader>J', ':resize -10<CR>')
 vim.keymap.set('n', '<leader>ww', ':w !doas tee %<CR>')
 
 vim.opt.expandtab = false;  -- разделение пробелами
-vim.opt.tabstop = 4        -- Ширина табуляции в 4 пробелов
-vim.opt.softtabstop = 4    -- Величина отступа при использовании "soft" табуляции
-vim.opt.shiftwidth = 4     -- Количество пробелов для каждого уровня отступа
+vim.opt.tabstop = 2        -- Ширина табуляции в 4 пробелов
+vim.opt.softtabstop = 2    -- Величина отступа при использовании "soft" табуляции
+vim.opt.shiftwidth = 2     -- Количество пробелов для каждого уровня отступа
 
 vim.opt.autoindent = true  -- Включить автоматическое форматирование при вводе
 
