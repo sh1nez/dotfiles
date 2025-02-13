@@ -33,4 +33,5 @@ require("plugins.docker")
 require("plugins.markdown")
 require("plugins.java")
 require("plugins.myplugin")
+require("plugins.env")
 
