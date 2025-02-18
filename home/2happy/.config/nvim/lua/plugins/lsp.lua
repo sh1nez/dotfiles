@@ -1,9 +1,11 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", "gopls", "jdtls"  }, }
+	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", "gopls", "jdtls", "hls"  }, }
 )
 
 local lspconfig = require('lspconfig')
+
+lspconfig.hls.setup {}
 
 lspconfig.jdtls.setup {}
 

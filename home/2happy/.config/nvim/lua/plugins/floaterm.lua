@@ -73,6 +73,10 @@ local switch_cases = {
 		execute_command("cd " .. file_directory .. " && php " .. file)
 	end,
 
+	hs = function (_)
+		execute_command("cabal run")
+	end,
+
 	default = function(_)
 		vim.cmd(":w")
 		vim.cmd('echo "Unsupported file type: "')
