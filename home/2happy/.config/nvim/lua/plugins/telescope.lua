@@ -5,9 +5,10 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fl', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>fw', builtin.diagnostics, {})
+
 vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
-vim.keymap.set('n', '<leader>gl', builtin.git_bcommits, {})
+vim.keymap.set('n', '<leader>gq', builtin.git_bcommits, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 
 require('telescope').setup {
