@@ -1,20 +1,18 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "emmet_ls", "cssls", "intelephense", "dockerls", "gopls", "jdtls", "hls", "jsonls" }, }
+  ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "zls", "rust_analyzer", "html", "ts_ls", "cssls", "intelephense", "dockerls", "gopls", "jdtls", "hls", "jsonls", "sqls", "eslint" }, }
 )
 
 local lspconfig = require('lspconfig')
 
--- lspconfig.jsonls.setup {}
--- Файл: ~/.config/nvim/init.lua
-
 lspconfig.jsonls.setup({
   cmd = { "vscode-json-language-server", "--stdio" },
   filetypes = { "json", "jsonc" },
-  -- on_attach = function(client, bufnr)
-  --   client.server_capabilities.documentFormattingProvider = false
-  -- end,
 })
+
+lspconfig.eslint.setup {}
+
+lspconfig.sqls.setup {}
 
 lspconfig.hls.setup {}
 
@@ -22,7 +20,11 @@ lspconfig.jdtls.setup {}
 
 lspconfig.gopls.setup {}
 
-lspconfig.ts_ls.setup {}
+lspconfig.ts_ls.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+}
 
 lspconfig.intelephense.setup {}
 

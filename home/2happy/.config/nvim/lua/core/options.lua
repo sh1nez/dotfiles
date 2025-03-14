@@ -7,7 +7,7 @@ vim.opt.relativenumber = false
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "json", "jsonc" },
   callback = function()
-    vim.bo.fixendofline = true
+    vim.bo.fixendofline = false
     vim.bo.eol = true
     vim.bo.formatoptions = vim.bo.formatoptions:gsub("[cro]", "")
   end
