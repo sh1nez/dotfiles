@@ -30,10 +30,13 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #
 # xrandr --output HDMI-0 --mode 1440x900
 # bspc monitor HDMI-0 -d 1 2 3 4 5 6 7 8
-for monitor in $(xrandr -q | grep -w 'connected' | cut -d' ' -f1); do
-    bspc monitor "$monitor" -d '1' '2' '3' '4' '5' '6'
-    #bspc monitor "$monitor" -d '' '' '' '' '' ''
-done
+bspc monitor DVI-D-0 -d 1 2 3 4 5 
+bspc monitor DVI-I-0 -d 6 7 8 9 0
+bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 0
+# for monitor in $(xrandr -q | grep -w 'connected' | cut -d' ' -f1); do
+#     bspc monitor "$monitor" -d '1' '2' '3' '4' '5' '6'
+#     #bspc monitor "$monitor" -d '' '' '' '' '' ''
+# done
 
 ## For two or three monitors configuration see https://github.com/gh0stzk/dotfiles/wiki/Two-or-more-monitors-setup
 

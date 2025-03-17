@@ -42,7 +42,9 @@ lspconfig.bashls.setup {}
 lspconfig.docker_compose_language_service.setup {}
 lspconfig.dockerls.setup {}
 lspconfig.zls.setup {}
+
 lspconfig.pylsp.setup {}
+
 lspconfig.lua_ls.setup {}
 lspconfig.cmake.setup {}
 lspconfig.rust_analyzer.setup {

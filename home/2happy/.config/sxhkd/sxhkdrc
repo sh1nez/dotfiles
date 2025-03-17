@@ -4,8 +4,8 @@ Print
 super + Print
 	sleep 1; flameshot gui
 
-super + w
-	bspc node -g hidden=on
+#super + w
+	#bspc node -g hidden=on
 
 super + e
 	bspc query -N -d focused -n .hidden | xargs -I % bspc node % -g hidden=off
@@ -28,14 +28,15 @@ super + alt + q
 super + q
 	bspc node -c
 
+#super + f
+	#bspc node -t "~"floating
+
 super + f
-	bspc node -t "~"fullscreen
-
-super + d
-	bspc node -t "~"floating
-
-super + z
 	bspc node -g sticky
+
+#super + d
+	# bspc node -t "~"fullscreen
+
 
 super + m
 	bspc desktop -l next
@@ -59,18 +60,9 @@ super + y
 super + g
 	bspc node -s biggest.window
 
-
-# set the window state
-# super + {t,shift + t,s,f}
-# 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
 # set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
-
-#
-# focus/swap
-#
+super + ctrl + {m,x,z}
+	bspc node -g {marked,locked,private}
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
@@ -84,17 +76,11 @@ super + {_,shift + }c
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
-
 # focus the older or newer node in the focus history
 super + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
-
-# focus or send to the given desktop
-
-# preselect the ratio
 
 # cancel the preselection for the focused node
 super + ctrl + space
@@ -103,10 +89,6 @@ super + ctrl + space
 # cancel the preselection for the focused desktop
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}

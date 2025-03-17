@@ -59,9 +59,12 @@ super + m
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+super + d 
+  bspc node -g sticky
+
 # set the node flags
-super + alt + {m,x,s,p}
-	bspc node -g {marked,locked,sticky,private}
+super + alt + {m,x,p}
+	bspc node -g {marked,locked,private}
 
 # Hide/Unhide Window
 super + ctrl + h
