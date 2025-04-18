@@ -91,5 +91,16 @@ require("lazy").setup({
     end,
     ft = { "markdown" },
   },
+  {
+    "rhysd/git-messenger.vim",
+    event = "BufRead",
+    config = function()
+      -- Автоматическое закрытие попапа при выходе из строки
+      vim.g.git_messenger_floating_win_opts = { border = "rounded" }
+      vim.g.git_messenger_always_into_popup = true
+      vim.keymap.set("n", "<leader>gm", "<Cmd>GitMessenger<CR>", { desc = "Show line blame" })
+    end,
+  }
+
 }
 )

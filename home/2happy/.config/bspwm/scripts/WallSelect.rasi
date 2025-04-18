@@ -14,10 +14,10 @@ configuration {
 //----- Global Properties -----//
 
 * {
-main-bg: #282a36E6;
-main-fg: #f8f8f2;
-select-bg: #bd93f9;
-select-fg: #f8f8f2;
+main-bg: #0E1113F7;
+main-fg: #afb1db;
+select-bg: #3d7fea;
+select-fg: #0E1113;
 }
 
 //----- Main Window -----//
